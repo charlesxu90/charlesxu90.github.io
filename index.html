@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Personal Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to my website!</h1>
-    <p>This is my personal webpage hosted on GitHub Pages.</p>
+    <header>
+        <h1 id="name">Your Name</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#research">Research Interests</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#awards">Awards & Honours</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome</h2>
+        <p id="home-text"></p>
+    </section>
+
+    <section id="research">
+        <h2>Research Interests</h2>
+        <ul id="research-list"></ul>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <ul id="publications-list"></ul>
+    </section>
+
+    <section id="awards">
+        <h2>Awards & Honours</h2>
+        <ul id="awards-list"></ul>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
