@@ -1,6 +1,6 @@
-# charlesxu90.github.io
+# Personal academic website of **Xiaopeng Xu**
 
-Personal academic website of **Xiaopeng Xu**, built with [Hugo](https://gohugo.io/)
+This is my personal website, built with [Hugo](https://gohugo.io/)
 and the [LoveIt](https://github.com/dillonzq/LoveIt) theme. Notes and blog posts
 are written as plain markdown files.
 
