@@ -1,0 +1,205 @@
+# ============================================================
+#  Site configuration for charlesxu90.github.io
+#  Theme: LoveIt (themes/LoveIt, git submodule)
+# ============================================================
+
+# GitHub Pages serves this repo at https://charlesxu90.github.io/
+# To use your custom domain (xu-xp.com) later: change this to
+# "https://www.xu-xp.com/" and add a CNAME file (see README).
+baseURL = "https://charlesxu90.github.io/"
+theme = "LoveIt"
+
+title = "Xiaopeng Xu"
+
+defaultContentLanguage = "en"
+languageName = "English"
+hasCJKLanguage = true
+
+enableRobotsTXT = true
+enableGitInfo = false
+enableEmoji = true
+
+# tolerate optional remote/data fetch errors during build
+ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+
+[pagination]
+  pagerSize = 10
+  path = "page"
+
+# ------------------------------------------------------------
+#  Navigation menu
+# ------------------------------------------------------------
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    title = "About me"
+  [[menu.main]]
+    weight = 2
+    identifier = "publications"
+    name = "Publications"
+    url = "/publications/"
+    title = "Selected publications"
+  [[menu.main]]
+    weight = 3
+    identifier = "posts"
+    name = "Notes"
+    url = "/posts/"
+    title = "Notes & blog posts"
+  [[menu.main]]
+    weight = 4
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    title = "Browse by category"
+  [[menu.main]]
+    weight = 5
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    title = "Browse by tag"
+
+# ------------------------------------------------------------
+#  Theme parameters
+# ------------------------------------------------------------
+[params]
+  defaultTheme = "auto"           # auto | light | dark
+  dateFormat = "Jan 2, 2006"
+  title = "Xiaopeng Xu"
+  description = "Xiaopeng Xu — Research Scientist at KAUST. Agentic AI for scientific discovery, protein design, and AI for synthetic biology."
+  keywords = ["Xiaopeng Xu", "KAUST", "AI for Science", "protein design", "synthetic biology", "bioinformatics", "agentic AI"]
+  images = ["/images/avatar.png"]
+
+  [params.author]
+    name = "Xiaopeng Xu"
+    email = "xiaopeng.xu@kaust.edu.sa"
+    link = "https://www.xu-xp.com/"
+
+  # ---- Header ----
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+    [params.header.title]
+      logo = ""
+      name = "Xiaopeng Xu"
+      pre = ""
+      typeit = false
+
+  # ---- Footer ----
+  [params.footer]
+    enable = true
+    custom = ""
+    hugo = false
+    copyright = true
+    author = true
+    since = 2024
+    license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+  # ---- Home page ----
+  [params.home]
+    rss = 10
+    [params.home.profile]
+      enable = true
+      gravatarEmail = ""
+      avatarURL = "/images/avatar.png"
+      title = "Xiaopeng Xu, Ph.D."
+      subtitle = "Research Scientist @ KAUST · Agentic AI for scientific discovery, protein design & synthetic biology"
+      typeit = false
+      social = true
+      disclaimer = ""
+    [params.home.posts]
+      enable = true
+      paginate = 6
+
+  # ---- Social links (home + footer) ----
+  # NOTE: GitHub + Email are confirmed. Replace the <PLACEHOLDER> IDs
+  # below with your real profile handles/IDs.
+  [params.social]
+    GitHub = "charlesxu90"
+    Email = "xiaopeng.xu@kaust.edu.sa"
+    Googlescholar = "<SCHOLAR_USER_ID>"     # the value after `user=` in your Scholar URL
+    Researchgate = "<RESEARCHGATE_PROFILE>" # the slug after /profile/
+    Linkedin = "<LINKEDIN_USERNAME>"        # the slug after /in/
+    ORCID = "<XXXX-XXXX-XXXX-XXXX>"
+    RSS = true
+
+  # ---- Page / content behaviour ----
+  [params.page]
+    hiddenFromHomePage = false
+    hiddenFromSearch = false
+    twemoji = false
+    lightgallery = true
+    ruby = true
+    fraction = true
+    fontawesome = true
+    [params.page.toc]
+      enable = true
+      keepStatic = false
+      auto = true
+    [params.page.code]
+      copy = true
+      maxShownLines = 50
+    [params.page.math]
+      enable = true
+      blockLeftDelimiter = "$$"
+      blockRightDelimiter = "$$"
+      inlineLeftDelimiter = "\\("
+      inlineRightDelimiter = "\\)"
+    [params.page.share]
+      enable = false
+
+  # ---- Site-wide search ----
+  [params.search]
+    enable = true
+    type = "fuse"
+    contentLength = 4000
+    placeholder = "Search notes…"
+    maxResultLength = 10
+    snippetLength = 30
+    highlightTag = "em"
+    absoluteURL = false
+    [params.search.fuse]
+      isCaseSensitive = false
+      minMatchCharLength = 2
+      findAllMatches = false
+      location = 0
+      threshold = 0.3
+      distance = 100
+      ignoreLocation = false
+
+# ------------------------------------------------------------
+#  Markup / rendering
+# ------------------------------------------------------------
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # required for raw HTML inside markdown (e.g. publication entries)
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+# ------------------------------------------------------------
+#  Output formats (JSON needed for search index)
+# ------------------------------------------------------------
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
