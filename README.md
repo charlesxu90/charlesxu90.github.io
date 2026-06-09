@@ -71,11 +71,20 @@ When you're ready to move `xu-xp.com` off Google Sites:
 3. On GitHub → **Settings → Pages → Custom domain**, enter `www.xu-xp.com`
    and configure your DNS (CNAME → `charlesxu90.github.io`).
 
-## TODO (fill in your real details)
+## Content
 
-- [ ] Replace `static/images/avatar.png` with your photo.
-- [ ] In `hugo.toml` `[params.social]`, replace the `<PLACEHOLDER>` IDs:
-      Google Scholar user id, ORCID, ResearchGate slug, LinkedIn username.
-- [ ] In `content/publications/index.md`, set the real Google Scholar URL and
-      add the rest of your publications.
-- [ ] Review `content/about/index.md` for accuracy.
+All pages are populated from the previous Google Site (xu-xp.com):
+
+- `content/about/index.md` — bio, education, experience, service
+- `content/research/index.md` — research interests
+- `content/publications/index.md` — 16 articles, 1 patent, 2 theses (with links/PDFs)
+- `content/awards/index.md` — awards & honours
+- `static/images/avatar.png` — headshot (cropped from the public KAUST profile)
+
+Social links (GitHub, Google Scholar, ResearchGate, LinkedIn, ORCID, email) are
+configured in `hugo.toml` under `[params.social]`.
+
+## Optional follow-ups
+
+- [ ] Swap in a higher-resolution / preferred headshot if you have one.
+- [ ] Move the `xu-xp.com` domain over (see custom-domain steps above).

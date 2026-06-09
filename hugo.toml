@@ -38,28 +38,28 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     title = "About me"
   [[menu.main]]
     weight = 2
+    identifier = "research"
+    name = "Research"
+    url = "/research/"
+    title = "Research interests"
+  [[menu.main]]
+    weight = 3
     identifier = "publications"
     name = "Publications"
     url = "/publications/"
-    title = "Selected publications"
+    title = "Publications"
   [[menu.main]]
-    weight = 3
+    weight = 4
+    identifier = "awards"
+    name = "Awards"
+    url = "/awards/"
+    title = "Awards & honours"
+  [[menu.main]]
+    weight = 5
     identifier = "posts"
     name = "Notes"
     url = "/posts/"
     title = "Notes & blog posts"
-  [[menu.main]]
-    weight = 4
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories/"
-    title = "Browse by category"
-  [[menu.main]]
-    weight = 5
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    title = "Browse by tag"
 
 # ------------------------------------------------------------
 #  Theme parameters
@@ -114,15 +114,13 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       paginate = 6
 
   # ---- Social links (home + footer) ----
-  # NOTE: GitHub + Email are confirmed. Replace the <PLACEHOLDER> IDs
-  # below with your real profile handles/IDs.
   [params.social]
     GitHub = "charlesxu90"
     Email = "xiaopeng.xu@kaust.edu.sa"
-    Googlescholar = "<SCHOLAR_USER_ID>"     # the value after `user=` in your Scholar URL
-    Researchgate = "<RESEARCHGATE_PROFILE>" # the slug after /profile/
-    Linkedin = "<LINKEDIN_USERNAME>"        # the slug after /in/
-    ORCID = "<XXXX-XXXX-XXXX-XXXX>"
+    Googlescholar = "user=5oAVwWMAAAAJ&hl=en"
+    Researchgate = "Xiaopeng-Xu-4"
+    Linkedin = "xiaopeng-charles-xu-0581b067"
+    ORCID = "0000-0003-2414-7851"
     RSS = true
 
   # ---- Page / content behaviour ----
