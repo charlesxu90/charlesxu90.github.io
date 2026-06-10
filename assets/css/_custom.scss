@@ -12,3 +12,35 @@
     margin-right: 0;
   }
 }
+
+// Align the desktop header with the centered content column.
+// LoveIt makes .header-wrapper full-width (padding: 0 2rem 0 10vh), so on
+// wide screens the title/menu sprawl to the viewport edges while content
+// stays capped at .page (max-width 1080px, width 64%, centered). Mirror
+// .page's sizing on the wrapper so the nav lines up with the content at
+// every breakpoint above the mobile cutoff.
+#header-desktop .header-wrapper {
+  max-width: 1080px;
+  width: 64%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+// Match the responsive widths LoveIt applies to .page in _core/_media.scss.
+@media only screen and (max-width: 1440px) {
+  #header-desktop .header-wrapper {
+    width: 56%;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  #header-desktop .header-wrapper {
+    width: 52%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  #header-desktop .header-wrapper {
+    width: 80%;
+  }
+}
