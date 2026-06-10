@@ -1,0 +1,14 @@
+// ==============================
+// Custom style
+// 自定义样式
+// ==============================
+
+// Remove the "#" anchor mark shown before <h2> section headers.
+// LoveIt sets `content: "#"` in _page/_single.scss; blank it out and
+// drop the trailing gap so headings start flush.
+.single .content {
+  > h2 > .header-mark::before {
+    content: "";
+    margin-right: 0;
+  }
+}
