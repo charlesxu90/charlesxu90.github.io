@@ -1,0 +1,14 @@
+{{- /*
+  about-intro: lay out a portrait photo beside intro text.
+  Use as a percent shortcode so the inner body renders as markdown
+  (links, bold, etc. keep working). See content/about/index.md for usage.
+*/ -}}
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default .Page.Title -}}
+<div class="about-intro">
+  <img class="about-intro-photo" src="{{ $src | relURL }}" alt="{{ $alt }}"
+       width="480" height="480" loading="eager" fetchpriority="high">
+  <div class="about-intro-bio">
+{{ .Inner }}
+  </div>
+</div>

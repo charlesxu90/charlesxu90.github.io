@@ -6,6 +6,8 @@ description: "About Xiaopeng Xu — Research Scientist at KAUST."
 lightgallery: true
 ---
 
+{{% about-intro src="/images/me.jpg" alt="Xiaopeng Xu" %}}
+
 I am a Research Scientist (Postdoctoral Research Fellow) at the
 [King Abdullah University of Science and Technology (KAUST)](https://www.kaust.edu.sa/),
 in the Computer, Electrical and Mathematical Sciences and Engineering (CEMSE)
@@ -25,6 +27,8 @@ Representative works include [AB-Gen](https://www.sciencedirect.com/science/arti
 and a [ChatGPT-like solution for protein design](https://repository.kaust.edu.sa/items/2fed7660-6328-48d6-b00a-529bf6adb98b).
 
 📫 **Email:** xiaopeng.xu *{at}* kaust.edu.sa
+
+{{% /about-intro %}}
 
 ## Education
 
