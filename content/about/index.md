@@ -31,9 +31,9 @@ and a [ChatGPT-like solution for protein design](https://repository.kaust.edu.sa
 {{% /about-intro %}}
 
 ## Education
-* 2020 – 2024, **Ph.D., Computer Science**, [King Abdullah University of Science and Technology (KAUST)](https://www.kaust.edu.sa/)
-* 2013 – 2015, **M.S., Computer Science**, [King Abdullah University of Science and Technology (KAUST)](https://www.kaust.edu.sa/)
-* 2009 – 2013, **B.S., Bioinformatics**, [Huazhong University of Science & Technology (HUST)](https://www.hust.edu.cn/)
+* 2020 – 2024, **Ph.D., Computer Science** under the supervision of [Prof. Xin Gao](https://www.kaust.edu.sa/en/study/faculty/xin-gao), [King Abdullah University of Science and Technology (KAUST)](https://www.kaust.edu.sa/)
+* 2013 – 2015, **M.S., Computer Science** under the supervision of [Prof. Xin Gao](https://www.kaust.edu.sa/en/study/faculty/xin-gao), [King Abdullah University of Science and Technology (KAUST)](https://www.kaust.edu.sa/)
+* 2009 – 2013, **B.S., Bioinformatics** under the supervision of [Prof. An-Yuan Guo](https://guolab.wchscu.cn/GuoLab/) and Dr. Qian Ge, [Huazhong University of Science & Technology (HUST)](https://www.hust.edu.cn/)
 
 ## Experience
 
@@ -44,7 +44,26 @@ and a [ChatGPT-like solution for protein design](https://repository.kaust.edu.sa
 * 2015 – 2017, **Data Scientist**, [MiningLamp](https://www.mininglamp.com/)
 * 2012 – 2013, **Bioinformatics Analyst** at Unit of Synthetic Biology and Cancer Research Group, [BGI](https://www.bgi.com/)
 
-## Professional Service
+## Academic Services
 
-Reviewer for *Bioinformatics*, *Pattern Recognition*, *ACS Synthetic Biology*,
-*IEEE Internet of Things Journal*, *RECOMB*, *Heliyon*, and others.
+### Reviewer
+
+| Journal / Conference | # Papers Reviewed |
+| :--- | ---: |
+| *Bioinformatics* | 1 |
+| *Pattern Recognition* | 1 |
+| *ACS Synthetic Biology* | 1 |
+| *IEEE Internet of Things Journal* | 1 |
+| *RECOMB* | 1 |
+| *Heliyon* | 1 |
+
+<!--
+  Update the counts above as you review more papers.
+  To add another service later, add a new "###" subsection, e.g.:
+
+  ### Editor
+  | Journal | Role | Years |
+  | :--- | :--- | ---: |
+  | *Journal name* | Guest Editor | 2026 |
+-->
+
