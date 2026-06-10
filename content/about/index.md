@@ -8,7 +8,7 @@ lightgallery: true
 
 {{% about-intro src="/images/me.jpg" alt="Xiaopeng Xu" %}}
 
-I am a Research Scientist (Postdoctoral Research Fellow) at the
+I am a Research Scientist at the
 [King Abdullah University of Science and Technology (KAUST)](https://www.kaust.edu.sa/),
 in the Computer, Electrical and Mathematical Sciences and Engineering (CEMSE)
 Division, working in the Structural and Functional Bioinformatics group under the
@@ -31,22 +31,18 @@ and a [ChatGPT-like solution for protein design](https://repository.kaust.edu.sa
 {{% /about-intro %}}
 
 ## Education
-
-| Degree | Institution | Years |
-|---|---|---|
-| **Ph.D., Computer Science** | KAUST | 2020 – 2024 |
-| **M.S., Computer Science** | KAUST | 2013 – 2015 |
-| **B.S., Bioinformatics** | Huazhong University of Science & Technology | 2009 – 2013 |
+* 2020 – 2024, **Ph.D., Computer Science**, [King Abdullah University of Science and Technology (KAUST)](https://www.kaust.edu.sa/)
+* 2013 – 2015, **M.S., Computer Science**, [King Abdullah University of Science and Technology (KAUST)](https://www.kaust.edu.sa/)
+* 2009 – 2013, **B.S., Bioinformatics**, [Huazhong University of Science & Technology (HUST)](https://www.hust.edu.cn/)
 
 ## Experience
 
-| Role | Organization | Years |
-|---|---|---|
-| **Postdoctoral Research Fellow** | KAUST | 2024 – Present |
-| **Product Manager**, Sensors Analytics | [Sensors Data](https://www.sensorsdata.com/) | 2020 – 2021 |
-| **Product Manager**, GeneDock Lab, Link & Analyzer | [GeneDock](https://www.genedock.com/) | 2017 – 2020 |
-| **Data Scientist** | [MiningLamp](https://www.mininglamp.com/) | 2015 – 2017 |
-| **Bioinformatics Analyst** | [BGI](https://www.bgi.com/) | 2012 – 2013 |
+* 2026 – Present, **Research Scientist**, [KAUST](https://www.kaust.edu.sa/)
+* 2024 – 2026, **Postdoctoral Research Fellow**, [KAUST](https://www.kaust.edu.sa/)
+* 2020 – 2021, **Product Manager** of Sensors Analytics, [Sensors Data](https://www.sensorsdata.com/)
+* 2017 – 2020, **Product Manager** of GeneDock Lab, Link & Analyzer, [GeneDock](https://www.genedock.com/) 
+* 2015 – 2017, **Data Scientist**, [MiningLamp](https://www.mininglamp.com/)
+* 2012 – 2013, **Bioinformatics Analyst** at Unit of Synthetic Biology and Cancer Research Group, [BGI](https://www.bgi.com/)
 
 ## Professional Service
 

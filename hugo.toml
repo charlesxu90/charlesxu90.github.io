@@ -82,7 +82,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     desktopMode = "fixed"
     mobileMode = "auto"
     [params.header.title]
-      logo = ""
+      logo = "/images/logo.png"
       name = "Xiaopeng Xu"
       pre = ""
       typeit = false
