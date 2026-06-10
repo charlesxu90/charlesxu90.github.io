@@ -55,6 +55,29 @@
   }
 }
 
+// Social icons rendered in page content via the social-links shortcode
+// (the theme's .home-profile .links styling doesn't reach content pages).
+.social-links {
+  margin-top: 0.75rem;
+  font-size: 1.4rem;
+  line-height: 1;
+
+  a {
+    margin-right: 0.6rem;
+    display: inline-block;
+  }
+
+  a * {
+    vertical-align: text-bottom;
+  }
+
+  // Simpleicons (e.g. Google Scholar) render as <img>; match icon size.
+  img {
+    height: 1.4rem;
+    width: auto;
+  }
+}
+
 // About page: portrait photo beside the intro bio (see the about-intro
 // shortcode). Photo is a fixed-width column on the left; the bio fills the
 // rest. Stacks vertically on narrow screens.

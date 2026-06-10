@@ -107,21 +107,19 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       title = "Xiaopeng Xu, Ph.D."
       subtitle = "Research Scientist @ KAUST · Agentic AI for scientific discovery, protein design & synthetic biology"
       typeit = false
-      social = true
+      social = false
       disclaimer = ""
     [params.home.posts]
       enable = true
       paginate = 6
 
-  # ---- Social links (home + footer) ----
+  # ---- Social links (rendered on the About page via the social-links shortcode) ----
   [params.social]
     GitHub = "charlesxu90"
-    Email = "xiaopeng.xu@kaust.edu.sa"
     Googlescholar = "user=5oAVwWMAAAAJ&hl=en"
     Researchgate = "Xiaopeng-Xu-4"
     Linkedin = "xiaopeng-charles-xu-0581b067"
     ORCID = "0000-0003-2414-7851"
-    RSS = true
 
   # ---- Page / content behaviour ----
   [params.page]

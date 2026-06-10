@@ -28,6 +28,8 @@ and a [ChatGPT-like solution for protein design](https://repository.kaust.edu.sa
 
 📫 **Email:** xiaopeng.xu *{at}* kaust.edu.sa
 
+{{< social-links >}}
+
 {{% /about-intro %}}
 
 ## Education
