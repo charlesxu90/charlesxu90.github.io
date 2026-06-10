@@ -45,6 +45,16 @@
   }
 }
 
+// Left-align the page title/subtitle on "special" pages (About, Research,
+// Publications, Awards, Notes). LoveIt's _page/_special.scss right-aligns
+// them, which leaves the heading floating far from the content below.
+.special {
+  .single-title,
+  .single-subtitle {
+    text-align: left;
+  }
+}
+
 // About page: portrait photo beside the intro bio (see the about-intro
 // shortcode). Photo is a fixed-width column on the left; the bio fills the
 // rest. Stacks vertically on narrow screens.
