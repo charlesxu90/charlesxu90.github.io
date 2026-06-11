@@ -50,14 +50,20 @@ and a [ChatGPT-like solution for protein design](https://repository.kaust.edu.sa
 
 ### Reviewer
 
-| Journal / Conference | # Papers Reviewed |
+| Journal / Conference / Funding | # Papers Reviewed |
 | :--- | ---: |
-| *Bioinformatics* | 1 |
-| *Pattern Recognition* | 1 |
-| *ACS Synthetic Biology* | 1 |
+| *Nature Machine Intelligence* | 1 |
+| *Nature Computer Science* | 1 |
+| *Nature Communications* | 1 |
+| *Genomics Proteomics and Bioinformatics* | 1 |
+| *Bioinformatics* | 4 |
+| *Pattern Recognition* | 3 |
+| *ACS Synthetic Biology* | 2 |
 | *IEEE Internet of Things Journal* | 1 |
 | *RECOMB* | 1 |
+| *International Journal of Molecular Sciences* | 2 |
 | *Heliyon* | 1 |
+| *KAUST Supercomputing Laboratory (KSL) Project Proposal* | 2 |
 
 <!--
   Update the counts above as you review more papers.
