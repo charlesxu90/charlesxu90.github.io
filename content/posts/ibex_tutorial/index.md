@@ -407,12 +407,12 @@ sinfo -o "%20N %10c %10m %25G %f" | \
 
 ##### Interactively monitor running job
 
-* # show running jobs and find <jobid> 
+* ## show running jobs and find <jobid> 
 
 ```plain
 squeue -u $USER
 ```
-* # examples of interactive session GPU / system monitoring
+* ## examples of interactive session GPU / system monitoring
 
 ```plain
 > srun --jobid=<jobid> -u --pty bash -i
@@ -671,7 +671,7 @@ if chkpnt_filepath is not None:
 
 * --kill-on-invalid-dep=yes ensures that a failed or canceled job also terminates all the follow-on jobs
 
-* # launch
+* ## launch
 
 ```plain
 _DEPENDENCY_ARG="--dependency=singleton"
@@ -688,21 +688,21 @@ done
 
 #### 手动管理 job Manage jobs manually
 
-* # view running and pending jobs for $USER
+* ## view running and pending jobs for $USER
 
    * squeue -u $USER
 
-* # interactively cancel jobs for $USER
+* ## interactively cancel jobs for $USER
 
    * scancel -u $USER -i
 
-* # cancel specific job; dependencies can now run, unless
+* ## cancel specific job; dependencies can now run, unless
 
-* # --kill-on-invalid-dep=yes specified via sbatch job launch 
+* ## --kill-on-invalid-dep=yes specified via sbatch job launch 
 
    * scancel <jobid>
 
-* # cancel all jobs with given name
+* ## cancel all jobs with given name
 
    * scancel --jobname=<jobname>
 
