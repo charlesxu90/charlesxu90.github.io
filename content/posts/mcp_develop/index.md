@@ -5,8 +5,8 @@ date: 2026-06-12
 draft: false
 author: "Xiaopeng Xu"
 description: "一篇 MCP 服务开发实践笔记，包含 FastMCP 基础搭建和工具组织示例。"
-tags: ["mcp", "ai-agent", "python", "development"]
-categories: ["General"]
+tags: ["Agentic AI"]
+categories: ["Technology"]
 lightgallery: true
 toc:
     enable: true

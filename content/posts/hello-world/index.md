@@ -5,7 +5,7 @@ date: 2026-06-10
 draft: false
 author: "Xiaopeng Xu"
 description: "First post on the new site, say hello world to the World Wide Web."
-tags: ["meta", "markdown"]
+tags: ["Basic"]
 categories: ["General"]
 lightgallery: true
 toc:

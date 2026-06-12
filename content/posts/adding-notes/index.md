@@ -5,8 +5,8 @@ date: 2026-06-11
 draft: false
 author: "Xiaopeng Xu"
 description: "A how-to for adding new notes to this Hugo site — file layout, front matter, indexing, images, and publishing."
-tags: ["meta", "workflow"]
-categories: ["General"]
+tags: ["Basic"]
+categories: ["Technology"]
 lightgallery: true
 toc:
   enable: true
