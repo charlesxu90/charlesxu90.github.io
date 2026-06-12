@@ -14,7 +14,7 @@ title: "Xiaopeng Xu"
 <!-- - **Jun 23, 2026**, started as a **Research Scientist** at [KAUST](https://www.kaust.edu.sa/) -->
 - **Jun 8, 2026**, [Mater-trends](https://xu-xp.com/Mater-trends/) — to track researches on material science — up and alive.
 - **Jun 3, 2026**, [AI-trends](https://xu-xp.com/AI-trends/) — to track research trends on artificial intelligence — and [Bio-trends](https://xu-xp.com/Bio-trends/) — to track researches on bioscience — up and alive.
-- **Mar 25, 2026**, [ProteinMCP](https://onlinelibrary.wiley.com/doi/full/10.1002/pro.70547) — an agentic AI framework for autonomous protein engineering — published in **Protein Science**!
+- **Mar 25, 2026**, the first tool buddle in [MacromNex](https://github.com/MacromNex), [ProteinMCP](https://onlinelibrary.wiley.com/doi/full/10.1002/pro.70547) — an agentic AI framework for autonomous protein engineering, published in **Protein Science**!
 - **Mar 24, 2026**, [SegDesign](https://onlinelibrary.wiley.com/doi/full/10.1002/pro.70542) — a framework for protein segment engineering — published in **Protein Science**.
 - **Jan 22, 2025**, [AggNet](https://onlinelibrary.wiley.com/doi/full/10.1002/pro.70031) — a Deep Learning method for protein aggregation prediction — published in **Protein Science**.
 - **Oct 3, 2024**, [AutoBA](https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/advs.202407094) — for multi-omics analysis with Agentic AI — published in **Advanced Science**.
