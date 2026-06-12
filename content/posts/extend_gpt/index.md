@@ -1,7 +1,7 @@
 ---
 title: "扩展GPT"
 subtitle: ""
-date: 2026-05-29
+date: 2024-02-24
 draft: false
 author: "Xiaopeng Xu"
 description: "扩展与微调 GPT 大模型的方法笔记：LoRA 等轻量化 finetune 技术。"
@@ -18,7 +18,7 @@ toc:
 
 LoRA 在预训练大模型，如 GPT， 的主结构外，增加了 adaptor 层，可以用较小的 memory 来 finetune 大模型。如下图，只训练 A 和 B 的参数。
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MzdjMGE1NWIxNmEwMzIzMTc0NzU0NmMwYjA3ODE2ZGRfOWY5MzY0M2JjZmQ3Nzk4NDYwYzJhMDVkMzE2OWY2ZjZfSUQ6NzMzMzMxMzI3MDEwMDUyNTA1OF8xNzgxMjkzODQ2OjE3ODEzODAyNDZfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612231420290.png)
 
 ### **安装**
 
@@ -102,7 +102,7 @@ FlashAttention\-2 通过优化 work partition 来减少不必要的 shared memor
 
 [https://github\.com/Dao\-AILab/flash\-attention](https://github.com/Dao-AILab/flash-attention)
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NGZhNDQ4NDk0Y2IzYzc0NTY0YmQ5MGUwMTU1YWQ5M2JfZjNjYjVhODVkZmZhMTg5YTUxZGE2NzFkMWVkODQ2MDVfSUQ6NzMzMzMxMzI2OTEwODE5NTMzMV8xNzgxMjkzODQ2OjE3ODEzODAyNDZfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612231704118.png)
 
 ### **安装**
 

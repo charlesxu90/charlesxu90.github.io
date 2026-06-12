@@ -1,7 +1,7 @@
 ---
 title: "Pytorch HPO 超参优化"
 subtitle: ""
-date: 2026-05-24
+date: 2023-05-24
 draft: false
 author: "Xiaopeng Xu"
 description: "PyTorch 超参数优化（HPO）常用工具与方法总结。"
@@ -57,11 +57,11 @@ NNI 提供一个 web portal 可以查看训练进度、查看结果、自定义�
 
 用户使用流程：
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MWE5OTkyODk0NmY1YzFjNzk0MGFlNTRhYTZhMDVkMTlfNWI3MzVkZjE1OTlkM2Q2YTM3MzcyMDNiNmJhZGUzYmVfSUQ6NzMzMzMyMDY4ODY1ODQ2NDc5Nl8xNzgxMjkzODkxOjE3ODEzODAyOTFfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612232740102.png)
 
 主要是使用 nnictl 来提交任务，用 WebUI 来做查看和管理。
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDYyNmVlMjZlMzY0Y2QwMTE2Y2E4ZDkwOGYxOGZjY2RfNTc0OTUwYTEwMjY5ZDRmZGE1OGZmODJlZTc4M2U5MDBfSUQ6NzMzMzMyMDY4OTAxNDgwMDQxMl8xNzgxMjkzODkxOjE3ODEzODAyOTFfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612232619999.gif)
 
 #### 配置实验 Experiment
 
@@ -302,7 +302,7 @@ Neural Architecture Search 是 DL 最常见、也最核心的问题。
 
 3. 性能评估 performance estimation，通过 evaluator 抽象实现。
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZjNiOGIyYzY0YzZkNzVhMDhlNjMwZGQ2ODE1NTU2MzFfZWU4NTZhYzE4OTA2Zjk0Y2IxYmRiZjI2MGM5YTUyYjRfSUQ6NzMzMzMyMDY4OTA1MzQwMTA4OV8xNzgxMjkzODkxOjE3ODEzODAyOTFfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612232959164.webp)
 
 #### 定义搜索空间
 

@@ -1,7 +1,7 @@
 ---
 title: "Torch Geometric 常用命令"
 subtitle: ""
-date: 2026-05-28
+date: 2024-05-28
 draft: false
 author: "Xiaopeng Xu"
 description: "PyTorch Geometric（PyG）常用命令与图数据处理速查。"
