@@ -1,7 +1,7 @@
 ---
 title: "R 常用命令"
 subtitle: ""
-date: 2026-05-05
+date: 2021-11-04
 draft: false
 author: "Xiaopeng Xu"
 description: "R 语言常用命令与操作速查。"
@@ -106,4 +106,4 @@ figure <- ggarrange(bxp, dp, lp,
                     ncol = 2, nrow = 2)
 figure
 ```
-<!-- TODO image: re-host on Aliyun OSS, then replace with ![r_commons](OSS_URL). Original saved at r_commons_images/r_commons_1.png -->
+![r_commons](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613004628911.webp)

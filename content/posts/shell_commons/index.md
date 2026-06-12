@@ -1,7 +1,7 @@
 ---
 title: "Shell 常用命令"
 subtitle: ""
-date: 2026-05-30
+date: 2020-10-02
 draft: false
 author: "Xiaopeng Xu"
 description: "Shell 常用命令速查：日常操作、find/replace、awk、文件与文件夹操作、gutils 与 VSCode 远程开发。"

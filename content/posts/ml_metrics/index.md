@@ -1,7 +1,7 @@
 ---
 title: "Metrics 评估指标"
 subtitle: ""
-date: 2026-05-21
+date: 2021-05-14
 draft: false
 author: "Xiaopeng Xu"
 description: "机器学习常用评估指标速查：准确率、精确率、召回率、F1 等。"

@@ -2,7 +2,7 @@
 title: "CL 对比学习介绍"
 subtitle: ""
 date: 2026-05-25
-draft: false
+draft: true
 author: "Xiaopeng Xu"
 description: "对比学习（Contrastive Learning）入门笔记：核心思想、常见方法与应用。"
 tags: ["Contrastive Learning", "Self-supervised Learning"]
