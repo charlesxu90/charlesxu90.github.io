@@ -31,6 +31,8 @@ Three sibling projects, one shared engine, three fields:
 All three are **free, open-source (MIT), and live right now** — static sites, no
 login, no tracking.
 
+![How Science Trends works](how-it-works.jpg "One shared pipeline — ingest → auto-label → count → classify — feeding a fast static dashboard.")
+
 ---
 
 ## What each one focuses on
