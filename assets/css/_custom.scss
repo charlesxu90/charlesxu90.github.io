@@ -26,22 +26,47 @@
   padding: 0;
 }
 
-// Match the responsive widths LoveIt applies to .page in _core/_media.scss.
+// Widen the content column (and the aligned header) on medium screens.
+// LoveIt's defaults shrink .page to 56% / 52% at ≤1440 / ≤1280, which leaves
+// very large side margins on half-screen windows. Use more of the available
+// width here; the max-width: 1080px cap on .page still bounds reading length
+// on large screens. Header-wrapper tracks .page so the nav stays aligned.
 @media only screen and (max-width: 1440px) {
+  .page,
   #header-desktop .header-wrapper {
-    width: 56%;
+    width: 72%;
   }
 }
 
 @media only screen and (max-width: 1280px) {
+  .page,
   #header-desktop .header-wrapper {
-    width: 52%;
+    width: 78%;
   }
 }
 
 @media only screen and (max-width: 960px) {
+  .page,
   #header-desktop .header-wrapper {
-    width: 80%;
+    width: 90%;
+  }
+}
+
+// Homepage post cards: show the auto-picked thumbnail at its NATURAL aspect
+// ratio. LoveIt forces a cropped 30% banner (padding + object-fit: cover),
+// which cuts the bottom off tall figures/diagrams. See the summary.html
+// override that supplies the image.
+.home .summary .featured-image-preview {
+  padding: 0;
+
+  img {
+    position: static;
+    width: 100%;
+    height: auto;
+
+    &.lazyloaded {
+      object-fit: contain;
+    }
   }
 }
 
