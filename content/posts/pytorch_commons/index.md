@@ -663,7 +663,7 @@ adam_opt = optim.Adam(model.parameters(), lr=1e-1)
 Pytorch 目前支持的 optimizer 包括 Adadelta, Adagrad, Adam, AdamW, SparseAdam, Adamax, ASGD, LBFGS, NAdam, RAdam, RMSprop, Rprop, SGD。
 其中，随机梯度下降法 SGD、Adagrad、Adam、都是属于梯度下降法的变式。
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OGQ1NjVlMmRmODU4YTdmYjg4NmNlYzY4YmJhNjQ0MzBfMTY3ZGZlMGE1NzUxOTJmN2Q1ZmE2M2IwNzYxZDU5ZDRfSUQ6NzM0MDc1ODc0NjU1NDk1NzgyN18xNzgxMjk0MDEwOjE3ODEzODA0MTBfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013527660.png)
 
 另一类牛顿法，是一种二阶收敛算法，能够以较远的目光全局的逼近目标函数。
 

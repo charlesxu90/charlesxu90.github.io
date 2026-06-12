@@ -1,7 +1,7 @@
 ---
 title: "SCI 论文写作"
 subtitle: ""
-date: 2026-04-22
+date: 2023-01-01
 draft: false
 author: "Xiaopeng Xu"
 description: "SCI 论文写作笔记：结构、流程与写作技巧总结。"
