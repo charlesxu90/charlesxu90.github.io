@@ -1,7 +1,7 @@
 ---
 title: "Tensorflow 常用命令"
 subtitle: ""
-date: 2022-05-23
+date: 2021-06-13
 draft: false
 author: "Xiaopeng Xu"
 description: "TensorFlow 常用命令与张量操作速查笔记。"

@@ -1,7 +1,7 @@
 ---
 title: "Python 常用命令"
 subtitle: ""
-date: 2026-05-17
+date: 2021-05-13
 draft: false
 author: "Xiaopeng Xu"
 description: "Python 常用命令与技巧速查。"

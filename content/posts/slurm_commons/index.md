@@ -1,7 +1,7 @@
 ---
 title: "Slurm 常用命令"
 subtitle: ""
-date: 2026-05-18
+date: 2020-10-24
 draft: false
 author: "Xiaopeng Xu"
 description: "Slurm 作业调度常用命令速查（HPC 集群）。"

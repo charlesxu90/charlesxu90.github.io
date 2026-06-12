@@ -56,7 +56,7 @@ pip install nni
 NNI 提供一个 web portal 可以查看训练进度、查看结果、自定义超参数和管理 HPO 实验。
 
 用户使用流程：
-
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613002323878.webp, "用户使用流程")
 ![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612232740102.png)
 
 主要是使用 nnictl 来提交任务，用 WebUI 来做查看和管理。

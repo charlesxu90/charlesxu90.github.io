@@ -1,7 +1,7 @@
 ---
 title: "Conda 常用命令"
 subtitle: ""
-date: 2026-05-11
+date: 2020-09-25
 draft: false
 author: "Xiaopeng Xu"
 description: "Conda 环境与包管理常用命令速查。"

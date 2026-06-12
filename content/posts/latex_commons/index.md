@@ -1,7 +1,7 @@
 ---
 title: "Latex 常用命令"
 subtitle: ""
-date: 2026-05-15
+date: 2022-04-25
 draft: false
 author: "Xiaopeng Xu"
 description: "LaTeX 常用命令速查：公式、表格、图片与排版。"
