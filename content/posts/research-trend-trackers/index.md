@@ -7,6 +7,7 @@ author: "Xiaopeng Xu"
 description: "Three free, open-source trackers — AI-Trends, Bio-Trends, and Mater-Trends — that turn the paper firehose into data on which research topics are rising, which are fading, and the papers behind each trend."
 tags: ["research-trends", "open-source", "data", "tools"]
 categories: ["Projects"]
+featuredImagePreview: "https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612121930834.png?x-oss-process=image/resize,w_800/format,webp"
 lightgallery: true
 toc:
   enable: true

@@ -94,7 +94,15 @@ Hugo builds the index for me:
 | `draft` | `true` hides it from the production build |
 | `description` | Used in search results and link previews |
 | `tags` / `categories` | Build `/tags/…` and `/categories/…` index pages |
+| `featuredImagePreview` | Thumbnail shown on the homepage post card (optional; an OSS URL) |
 | `toc.enable` | Toggles the table of contents |
+
+{{< admonition type=note title="Post thumbnails" >}}
+The homepage cards only show a thumbnail when a post sets `featuredImagePreview`
+— there's no automatic image pick, so each note opts in deliberately. Point it at
+an OSS URL (a small card variant is enough), e.g.
+`...png?x-oss-process=image/resize,w_800/format,webp`.
+{{< /admonition >}}
 
 {{< admonition type=tip title="Drafts and dates" >}}
 Set `draft: true` while writing — it stays out of the live site until you flip it
