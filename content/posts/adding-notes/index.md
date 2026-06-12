@@ -67,11 +67,13 @@ Hugo builds the index for me:
    The full note continues here…
    ```
 
-5. **Co-locate images** in the same folder and reference them with a relative path
-   (use a quoted title for a caption):
+5. **Host images on Aliyun OSS, not in the repo.** Upload with PicGo (it copies a
+   URL to the clipboard), then reference that URL — keeping binaries out of git
+   keeps the repo small. Append OSS image-processing params to serve a light,
+   resized version, and use a quoted title for the caption:
 
    ```markdown
-   ![Trend overview](trend-overview.png "Publications per year in my field.")
+   ![Trend overview](https://<bucket>.oss-cn-beijing.aliyuncs.com/img/<name>.png?x-oss-process=image/resize,w_1600/format,webp "Publications per year in my field.")
    ```
 
 6. **Preview locally**, then publish by pushing to `main`:
