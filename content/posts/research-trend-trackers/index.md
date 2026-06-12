@@ -1,7 +1,7 @@
 ---
 title: "What is science actually working on? I built three open-source trackers to find out."
 subtitle: ""
-date: 2026-06-12
+date: 2026-06-11
 draft: false
 author: "Xiaopeng Xu"
 description: "Three free, open-source trackers — AI-Trends, Bio-Trends, and Mater-Trends — that turn the paper firehose into data on which research topics are rising, which are fading, and the papers behind each trend."
