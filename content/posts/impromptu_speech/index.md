@@ -12,11 +12,11 @@ toc:
   enable: true
 ---
 
-<!-- TODO image: re-host on Aliyun OSS, then replace this comment with ![即兴演讲](OSS_URL "caption"). Original saved at impromptu_speech_images/impromptu_speech_1.jpg (book cover) -->
+![即兴演讲](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613000110292.webp "内容")
 
 ## 领导者讲话脚本模板介绍
 
-<!-- TODO image: re-host on Aliyun OSS, then replace this comment with ![即兴演讲](OSS_URL "caption"). Original saved at impromptu_speech_images/impromptu_speech_2.png (script template) -->
+![即兴演讲](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613000155776.webp "四个词：抓手、要点、结构体（论据）、呼吁行动)
 * 第一，用抓手来吸引听众。抓手内容可以是对听众友好的问候，或是对前面讨论的引述，或是延续某人的观点。本书第13章将详细讨论抓手。
 
 * 第二，陈述要点。这部分涉及你的观点，是即兴讲话脚本的核心所在。本书第11章将探讨讲话要点的作用和内容。

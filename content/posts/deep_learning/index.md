@@ -1,8 +1,8 @@
 ---
 title: "DL 深度学习笔记"
 subtitle: ""
-date: 2026-05-20
-draft: false
+date: 2022-02-11
+draft: true
 author: "Xiaopeng Xu"
 description: "深度学习基础学习笔记：神经网络、反向传播与常见模型要点。"
 tags: ["Deep Learning", "Basic"]

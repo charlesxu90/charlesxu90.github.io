@@ -12,7 +12,7 @@ toc:
   enable: true
 ---
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MGQ3ZDA1MjllMzU2ZTIzMmM1ZDE2N2EyNjQxYTVmOTFfNTZiYzY0MTVhMmY0ZjE3OTYwOTJiNDAwY2FlMDA2NWFfSUQ6NzM0MDc2MTY0MzU5MDk3NTQ5Ml8xNzgxMjk0MjQ3OjE3ODEzODA2NDdfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612235711658.png)
 
 ## 准确性 Accuracy
 
