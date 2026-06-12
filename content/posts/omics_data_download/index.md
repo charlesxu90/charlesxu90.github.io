@@ -1,7 +1,7 @@
 ---
 title: "组学数据下载"
 subtitle: ""
-date: 2026-05-04
+date: 2023-10-01
 draft: false
 author: "Xiaopeng Xu"
 description: "组学原始数据下载方法速查。"

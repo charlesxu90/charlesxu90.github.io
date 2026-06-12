@@ -1,7 +1,7 @@
 ---
 title: "数据库常用命令"
 subtitle: ""
-date: 2026-05-12
+date: 2024-02-08
 draft: false
 author: "Xiaopeng Xu"
 description: "数据库常用命令速查：查询、表操作与管理。"

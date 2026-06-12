@@ -1,7 +1,7 @@
 ---
 title: "Nanopore 信号分析"
 subtitle: ""
-date: 2026-05-03
+date: 2024-02-07
 draft: false
 author: "Xiaopeng Xu"
 description: "Nanopore 原始电信号数据格式与信号分析笔记。"

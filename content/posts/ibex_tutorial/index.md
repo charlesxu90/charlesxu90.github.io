@@ -1,7 +1,7 @@
 ---
 title: "Ibex 使用说明"
 subtitle: ""
-date: 2026-05-01
+date: 2020-09-28
 draft: false
 author: "Xiaopeng Xu"
 description: "KAUST Ibex 集群使用说明：登录、作业提交与环境配置等。"
@@ -138,7 +138,7 @@ ssh glogin.ibex.kaust.edu.sa
 ```
 * First login auto-generates keys & ssh config
 
-   * .ssh/config<!-- TODO image: re-host on Aliyun OSS, then replace with ![ibex_tutorial](OSS_URL). Original saved at ibex_tutorial_images/ibex_tutorial_1.png -->
+   * .ssh/config![Ibex 使用说明](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613012341170.png)
 
 * [https://www.hpc.kaust.edu.sa/ibex/new_user](https://www.hpc.kaust.edu.sa/ibex/new_user) 
 

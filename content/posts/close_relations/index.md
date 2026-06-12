@@ -1,8 +1,8 @@
 ---
 title: "亲密关系"
 subtitle: ""
-date: 2026-04-30
-draft: false
+date: 2020-12-25
+draft: draft
 author: "Xiaopeng Xu"
 description: "关于亲密关系与亲子关系的一些思考与笔记。"
 tags: ["Relationships", "Family"]

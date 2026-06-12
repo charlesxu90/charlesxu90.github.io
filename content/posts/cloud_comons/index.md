@@ -1,7 +1,7 @@
 ---
 title: "Cloud 常用命令"
 subtitle: ""
-date: 2026-05-10
+date: 2024-02-08
 draft: false
 author: "Xiaopeng Xu"
 description: "云服务 / 云平台常用命令速查。"

@@ -1,7 +1,7 @@
 ---
 title: "如何写好一篇文献综述"
 subtitle: ""
-date: 2026-05-07
+date: 2023-01-01
 draft: false
 author: "Xiaopeng Xu"
 description: "如何写好一篇文献综述：结构、方法与写作建议。"

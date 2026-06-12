@@ -1,7 +1,7 @@
 ---
 title: "Jupyterlab 使用"
 subtitle: ""
-date: 2026-05-14
+date: 2025-11-06
 draft: false
 author: "Xiaopeng Xu"
 description: "JupyterLab 使用笔记：常用操作与配置技巧。"

@@ -1,7 +1,7 @@
 ---
 title: "浅谈学术论文 rebuttal"
 subtitle: ""
-date: 2026-05-06
+date: 2023-03-12
 draft: false
 author: "Xiaopeng Xu"
 description: "浅谈学术论文 rebuttal：审稿回复的策略与写法。"

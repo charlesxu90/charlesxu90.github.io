@@ -1,7 +1,7 @@
 ---
 title: "Nanopore 分析流程"
 subtitle: ""
-date: 2026-05-02
+date: 2024-02-08
 draft: false
 author: "Xiaopeng Xu"
 description: "Nanopore 测序数据的基础分析流程笔记。"
@@ -143,7 +143,8 @@ less NA12878-DirectRNA_align.sam 
 
 比对结果主要包括11列信息：
 
-<!-- TODO image: re-host on Aliyun OSS, then replace with ![nanopore_data_analysis](OSS_URL). Original saved at nanopore_data_analysis_images/nanopore_data_analysis_1.jpg -->
+![nanopore_data_analysis](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613011720253.png)
+
 * 1. QNAME：reads名称。
 
 * 2. FLAG：reads比对情况。不同的情况对应不同的值，这里的数字是所有情况的和。
@@ -250,7 +251,7 @@ igv
 在 IGV 中选择要加载的 BAM 文件，其对应的 BAI 文件应该有相同的文件名。
 加载成功后，在搜索框中输入基因名，即可查看数据。
 
-<!-- TODO image: re-host on Aliyun OSS, then replace with ![nanopore_data_analysis](OSS_URL). Original saved at nanopore_data_analysis_images/nanopore_data_analysis_2.png -->
+![nanopore_data_analysis](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613011848584.png)
 有时候程序运行正常，但会出现无基因 reads的情况。这种情况需要考虑是否测序数据中就没有这个基因。如，非血液样本的测序中，没有 HBB、HBA1和HBA2。
 
 ## 获取 reads 比对信息
