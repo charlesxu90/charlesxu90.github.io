@@ -1,0 +1,29 @@
+---
+title: "即兴演讲读书笔记"
+subtitle: ""
+date: 2020-10-26
+draft: false
+author: "Xiaopeng Xu"
+description: "《即兴演讲》读书笔记：即兴讲话脚本的四要素——抓手、要点、结构体（论据）、呼吁行动。"
+tags: ["Speech", "Reading Notes"]
+categories: ["Reading"]
+lightgallery: true
+toc:
+  enable: true
+---
+
+<!-- TODO image: re-host on Aliyun OSS, then replace this comment with ![即兴演讲](OSS_URL "caption"). Original saved at impromptu_speech_images/impromptu_speech_1.jpg (book cover) -->
+
+## 领导者讲话脚本模板介绍
+
+<!-- TODO image: re-host on Aliyun OSS, then replace this comment with ![即兴演讲](OSS_URL "caption"). Original saved at impromptu_speech_images/impromptu_speech_2.png (script template) -->
+* 第一，用抓手来吸引听众。抓手内容可以是对听众友好的问候，或是对前面讨论的引述，或是延续某人的观点。本书第13章将详细讨论抓手。
+
+* 第二，陈述要点。这部分涉及你的观点，是即兴讲话脚本的核心所在。本书第11章将探讨讲话要点的作用和内容。
+
+* 第三，建立结构体。本部分为讲话要点构建令人信服的案例，并提供明确的、有说服力的论据。请参阅本书第12章有关结构体的讨论。
+
+* 第四，以呼吁行动结束。讲话要点要转化为行动，这部分讲话即起到唤起行动的作用。本书第13章将对此进行详细的探讨。
+
+
+这本书废话偏多。个人认为重点就是这四个词：抓手、要点、结构体（论据）、呼吁行动。至于各种场合和准备，其实也都是如何在情景下，优化即兴演讲的内容。

@@ -1,8 +1,8 @@
 ---
 title: "RL 强化学习笔记"
 subtitle: ""
-date: 2026-05-27
-draft: false
+date: 2021-06-18
+draft: true
 author: "Xiaopeng Xu"
 description: "强化学习学习笔记：从多臂赌博机到价值方法与策略梯度的核心概念。"
 tags: ["Reinforcement Learning"]
@@ -18,13 +18,13 @@ toc:
 
 - 只有动作 \(action\) 和对应的收益 \(rewards\)。无状态 \(states\)。
 
-- 动作价值方法
+- 动作价值函数
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTI3YjNlNjllNzg0Y2UzYTUzN2Y3Y2EyZWNmYTM5N2VfZjljNzVhMzk2OTFhYWMxNzRhN2I1NWJjYjA5NDQxNmNfSUQ6NzMzMzMzMzQyNjI3OTcxMDcyMV8xNzgxMjk0MTY3OjE3ODEzODA1NjdfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612234523209.webp)
 
 - 
 
-![Image](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NTc0OTVhN2ZkMDI4ZTcyNmNjM2NhMDVkZWJkZWM0NTVfZjYzNDk2MjgwYTAzNzBkZjk3MDNkYWZjOWI0Y2VhZDdfSUQ6NzMzMzMzMzQyNjAwMDM3OTkwNl8xNzgxMjk0MTY2OjE3ODEzODA1NjZfVjM)
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612234605437.webp)
 
 - 增量式实现
 
