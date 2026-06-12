@@ -146,18 +146,26 @@
   }
 }
 
+// Shared home-page section heading: the "Recent News" title (inside the
+// shortcode box) and the "Recent Notes" title (above the auto-listed posts).
+.home-section-title {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+// Inside the Recent News box the heading is the first child, so drop the
+// large top margin the shared rule applies.
+.recent-news .recent-news-title {
+  margin: 0 0 0.9rem;
+}
+
 // Recent News box (home page, via the recent-news shortcode). A scrollable,
 // bordered panel with a section heading. Theme-aware via LoveIt's SCSS color
 // variables; scrolls past --recent-news-height with a styled scrollbar.
 .recent-news {
   margin: 2.5rem 0 1rem;
-
-  .recent-news-title {
-    margin: 0 0 0.9rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
 
   .recent-news-list {
     max-height: var(--recent-news-height, 24rem);

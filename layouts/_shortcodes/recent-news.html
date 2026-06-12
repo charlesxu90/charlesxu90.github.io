@@ -14,7 +14,7 @@
 {{- $height := .Get "height" | default "24rem" -}}
 {{- $body := trim .Inner "\n\r\t " | .Page.RenderString (dict "display" "block") -}}
 <section class="recent-news" aria-labelledby="recent-news-heading">
-  <h2 id="recent-news-heading" class="recent-news-title">{{ $title }}</h2>
+  <h2 id="recent-news-heading" class="home-section-title recent-news-title">{{ $title }}</h2>
   <div class="recent-news-list"{{ if ne $height "none" }} style="--recent-news-height: {{ $height }}"{{ end }}>
     {{ $body }}
   </div>

@@ -112,6 +112,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     [params.home.posts]
       enable = true
       paginate = 6
+      title = "Recent Notes"   # heading shown above the auto-listed posts
 
   # ---- Social links (rendered on the About page via the social-links shortcode) ----
   [params.social]
