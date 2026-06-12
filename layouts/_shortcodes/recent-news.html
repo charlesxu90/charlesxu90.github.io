@@ -1,0 +1,21 @@
+{{- /*
+  recent-news: a scrollable, bordered box listing recent news / updates.
+  Use as an ANGLE shortcode ({{< recent-news >}}). The inner markdown list
+  (links, **bold**, etc.) is rendered explicitly below, which keeps the
+  wrapping markup well-formed (a percent shortcode re-parses its own HTML
+  through goldmark and mangles the closing tags). See content/_index.md.
+
+  Optional params:
+    title  — heading text   (default "Recent News")
+    height — scroll-area max height (default "24rem"); set "none" to disable
+             scrolling and show the full list.
+*/ -}}
+{{- $title := .Get "title" | default "Recent News" -}}
+{{- $height := .Get "height" | default "24rem" -}}
+{{- $body := trim .Inner "\n\r\t " | .Page.RenderString (dict "display" "block") -}}
+<section class="recent-news" aria-labelledby="recent-news-heading">
+  <h2 id="recent-news-heading" class="recent-news-title">{{ $title }}</h2>
+  <div class="recent-news-list"{{ if ne $height "none" }} style="--recent-news-height: {{ $height }}"{{ end }}>
+    {{ $body }}
+  </div>
+</section>

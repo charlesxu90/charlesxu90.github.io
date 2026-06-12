@@ -145,3 +145,72 @@
     }
   }
 }
+
+// Recent News box (home page, via the recent-news shortcode). A scrollable,
+// bordered panel with a section heading. Theme-aware via LoveIt's SCSS color
+// variables; scrolls past --recent-news-height with a styled scrollbar.
+.recent-news {
+  margin: 2.5rem 0 1rem;
+
+  .recent-news-title {
+    margin: 0 0 0.9rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .recent-news-list {
+    max-height: var(--recent-news-height, 24rem);
+    overflow-y: auto;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid $global-border-color;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.015);
+
+    [theme=dark] & {
+      border-color: $global-border-color-dark;
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    // Tighten the list inside the panel; the markdown list keeps default
+    // disc bullets but gets comfortable line spacing for scanning.
+    ul {
+      margin: 0.4rem 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin: 0.45rem 0;
+      line-height: 1.55;
+    }
+
+    li::marker {
+      color: $global-font-secondary-color;
+    }
+
+    // Leading date in each item: emphasise with the secondary text colour
+    // so it reads as metadata rather than body copy.
+    li > strong:first-child {
+      color: $global-font-secondary-color;
+      font-variant-numeric: tabular-nums;
+
+      [theme=dark] & {
+        color: $global-font-secondary-color-dark;
+      }
+    }
+
+    // Custom scrollbar (WebKit) to match the subtle panel chrome.
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.18);
+      border-radius: 0.5rem;
+
+      [theme=dark] & {
+        background-color: rgba(255, 255, 255, 0.18);
+      }
+    }
+  }
+}
