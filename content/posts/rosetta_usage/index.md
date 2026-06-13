@@ -1,7 +1,7 @@
 ---
 title: "Rosetta 使用"
 subtitle: ""
-date: 2026-04-21
+date: 2024-02-08
 draft: false
 author: "Xiaopeng Xu"
 description: "Rosetta 使用笔记：安装与常见蛋白质设计/建模流程。"

@@ -1,7 +1,7 @@
 ---
 title: "基于结构设计抗体"
 subtitle: ""
-date: 2026-04-24
+date: 2022-02-03
 draft: false
 author: "Xiaopeng Xu"
 description: "基于结构的抗体设计笔记：方法、流程与工具。"

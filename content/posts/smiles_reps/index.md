@@ -1,7 +1,7 @@
 ---
 title: "SMILES 化学表示"
 subtitle: ""
-date: 2026-04-23
+date: 2021-06-09
 draft: false
 author: "Xiaopeng Xu"
 description: "SMILES 化学表示简介：分子的字符串表示与常见用法。"

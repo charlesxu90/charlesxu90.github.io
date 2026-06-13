@@ -1,7 +1,7 @@
 ---
 title: "Ig-seq 操作说明"
 subtitle: ""
-date: 2026-04-20
+date: 2024-02-08
 draft: false
 author: "Xiaopeng Xu"
 description: "Ig-seq（免疫组库测序）操作说明：数据下载与 MiXCR 分析流程。"
