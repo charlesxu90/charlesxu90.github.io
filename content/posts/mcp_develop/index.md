@@ -1,7 +1,7 @@
 ---
 title: "MCP 开发说明"
 subtitle: ""
-date: 2026-06-12
+date: 2025-10-29
 draft: false
 author: "Xiaopeng Xu"
 description: "一篇 MCP 服务开发实践笔记，包含 FastMCP 基础搭建和工具组织示例。"
