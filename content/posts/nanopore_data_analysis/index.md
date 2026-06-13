@@ -143,7 +143,7 @@ less NA12878-DirectRNA_align.sam 
 
 比对结果主要包括11列信息：
 
-![nanopore_data_analysis](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613011720253.png)
+![nanopore_data_analysis](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613015928019.webp)
 
 * 1. QNAME：reads名称。
 

@@ -2,9 +2,9 @@
 title: "RL 强化学习笔记"
 subtitle: ""
 date: 2021-06-18
-draft: true
+draft: false
 author: "Xiaopeng Xu"
-description: "强化学习学习笔记：从多臂赌博机到价值方法与策略梯度的核心概念。"
+description: "RL 强化学习笔记相关笔记。"
 tags: ["Reinforcement Learning"]
 categories: ["Technology"]
 lightgallery: true
@@ -14,832 +14,557 @@ toc:
 
 ## RL 基础
 
-### 2 多臂赌博机 \(K\-arm bandit\)
 
-- 只有动作 \(action\) 和对应的收益 \(rewards\)。无状态 \(states\)。
 
-- 动作价值函数
+### 2 多臂赌博机 (K-arm bandit)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612234523209.webp)
+* 只有动作 (action) 和对应的收益 (rewards)。无状态 (states)。
 
-- 
+* 动作价值函数![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031744930.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031746379.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612234605437.webp)
+* 增量式实现![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031747447.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031748752.png)
 
-- 增量式实现
+#### 多臂赌博机的$$\varepsilon$$- 贪心算法 (Espilon greedy)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014131652.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031750194.png)
+#### 探索 (exploration) vs 开发 (eploitation)
 
-- 
+* **乐观初始值 Optimistic Initial Values**-- 鼓励在开始的时候多做探索
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014129256.png)
+* **基于置信度上界 (Upper-Confidence-Bound, UCB) 的动作选择** -- 鼓励在探索时多选择低频的动作 (action)。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031751655.png)
 
-#### 多臂赌博机的$\varepsilon$\- 贪心算法 \(Espilon greedy\)
+   * At is action, Nt(a) is number of action a. t is time-step. c controls degree of exploration.
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014126591.png)
+* **Gradient Bandit Algorithms**-- Add action preference![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031752939.png)
 
-#### 探索 \(exploration\) vs 开发 \(eploitation\)
+   * Where H(a) is preferences to action a.
 
-- **乐观初始值 Optimistic Initial Values**\-\- 鼓励在开始的时候多做探索
 
-- **基于置信度上界 \(Upper\-Confidence\-Bound, UCB\) 的动作选择** \-\- 鼓励在探索时多选择低频的动作 \(action\)。
+### 3 有限马尔可夫决策过程 (Finite Markov Decision Processes)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014123862.png)
+* 有状态 (**states)**、动作 (**actions)**和收益 (**rewards)**。相比多臂赌博机增加了状态。 
 
-- At is action, Nt\(a\) is number of action a\. t is time\-step\. c controls degree of exploration\.
+* 定义：
 
-- **Gradient Bandit Algorithms**\-\- Add action preference
+   * In a **finite MDP**, the sets of **states**, **actions**, and **rewards** (S, A, and R) all have a finite number of elements. In this case, the random variables **Rt** and **St** have well defined discrete probability distributions dependent only on the **preceding state** **St-1**and **action At-1**.![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031754162.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014121494.png)
 
-- Where H\(a\) is preferences to action a\.
+#### “智能体-环境”交互接口 The Agent–Environment Interface
 
-### 3 有限马尔可夫决策过程 \(Finite Markov Decision Processes\)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031755600.png)
 
-- 有状态 \(**states\)**、动作 \(\*\*actions\)\*\*和收益 \(**rewards\)**。相比多臂赌博机增加了状态。
+#### 目标 (Goals)、收益 (Rewards)、回报 (Returns) 和分幕 (Episodes)
 
-- 定义：
+* 目标 Goals 和收益 Rewards
 
-    - In a **finite MDP**, the sets of **states**, **actions**, and **rewards** \(S, A, and R\) all have a finite number of elements\. In this case, the random variables **Rt** and **St** have well defined discrete probability distributions dependent only on the **preceding state** **St\-1**and **action At\-1**\.
+   * That all of what we mean by **goals** and purposes can be well thought of as the maximization of the expected value of the cumulative sum of a received scalar signal (called **reward**).
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014119040.png)
+* 回报 Returns、收益 Rewards、折扣率 (discount rate) 和分幕 (episodes)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031757110.png)
 
-#### “智能体\-环境”交互接口 The Agent–Environment Interface
+   * R is reward, G is return, r is discount rate.
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014116417.png)
+   * This approach above makes sense in applications in which there is a natural notion of final time step, that is, when **the agent–environment interaction** **breaks naturally into subsequences**, which we call **episodes**
 
-#### 目标 \(Goals\)、收益 \(Rewards\)、回报 \(Returns\) 和分幕 \(Episodes\)
+      * such as plays of a game, trips through a maze, or any sort of repeated interaction. 
 
-- 目标 Goals 和收益 Rewards
+#### 策略 (Policies) 和价值函数 (Value Functions)
 
-    - That all of what we mean by **goals** and purposes can be well thought of as the maximization of the expected value of the cumulative sum of a received scalar signal \(called **reward**\)\.
+* **状态价值函数 (State-value function)**：the value function of a state s under a policy pai：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031758686.png)
 
-- 回报 Returns、收益 Rewards、折扣率 \(discount rate\) 和分幕 \(episodes\)
+* **动作价值函数 (Action-value function)**: the value function of taking action a in state s under a policy pai, ()![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031759921.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014113738.png)
+* **最优状态价值函数** (Optimal state-value function)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031801185.png)
 
-- R is reward, G is return, r is discount rate\.
+* **最优动作价值函数**(Optimal action-value function)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031802442.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031803842.png)
 
-- This approach above makes sense in applications in which there is a natural notion of final time step, that is, when **the agent–environment interaction** **breaks naturally into subsequences**, which we call **episodes**
 
-    - such as plays of a game, trips through a maze, or any sort of repeated interaction\. 
+#### 贝尔曼方程 (Bellman function)
 
-#### 策略 \(Policies\) 和价值函数 \(Value Functions\)
+* **状态价值函数**State-value function![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031805274.png)
 
-- **状态价值函数 \(State\-value function\)**：the value function of a state s under a policy pai：
+* **最优状态价值函数**Optimal state-value function![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031806752.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014110802.png)
+* **最优动作价值函数**Optimal action-value function![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031808731.png)
 
-- **动作价值函数 \(Action\-value function\)**: the value function of taking action a in state s under a policy pai, \(\)
+### 4 动态规划 (Dynamic Programming)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014107826.png)
+DP algorithms are obtained by turning **Bellman equations** (such as optimal state-value function and optimal action-value function) to update rules for improving approximations of the desired value functions in RL.
 
-- **最优状态价值函数** \(Optimal state\-value function\)
+#### 4.1 策略评估 (Policy Evaluation) (或 预测 (Prediction))
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014104602.png)
+* 迭代策略评估公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031809952.png)
 
-- **最优动作价值函数**\(Optimal action\-value function\)
+* 迭代策略评估算法
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014101554.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031811167.png)
+#### 4.2 策略改进 (Policy Improvement) 
 
-- 
+* 迭代策略改进公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031812703.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014058926.png)
+#### 4.3 策略迭代 (Policy Iteration)
 
-#### 贝尔曼方程 \(Bellman function\)
+* Sequence of monotonically improving policies and value functions:![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031814123.png)
 
-- **状态价值函数**State\-value function
+   * where ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031815554.png) denotes a policy evaluation and ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031816988.png) denotes a policy improvement
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014056054.png)
+* 策略迭代算法![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031818218.png)
 
-- **最优状态价值函数**Optimal state\-value function
+#### 4.4 价值迭代 (Value Iteration) 80
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014053500.png)
+* 价值迭代公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031819952.png)
 
-- **最优动作价值函数**Optimal action\-value function
+* 价值迭代算法![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031821157.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014050903.png)
+* 
 
-### 4 动态规划 \(Dynamic Programming\)
+#### 4.6 广义策略迭代 (Generalized Policy Iteration, GPI) 84
 
-DP algorithms are obtained by turning **Bellman equations** \(such as optimal state\-value function and optimal action\-value function\) to update rules for improving approximations of the desired value functions in RL\.
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031822734.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031824219.png)
 
-#### 4\.1 策略评估 \(Policy Evaluation\) \(或 预测 \(Prediction\)\)
+## 表格型方法  (Tabular methods)
 
-- 迭代策略评估公式
+### 5 蒙特卡洛方法 (Monte Carlo Methods)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014048475.png)
+* 能够使用历史经验或数据进行新策略的学习
 
-- 迭代策略评估算法
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014046322.png)
-
-#### 4\.2 策略改进 \(Policy Improvement\)
-
-- 迭代策略改进公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014043457.png)
-
-#### 4\.3 策略迭代 \(Policy Iteration\)
-
-- Sequence of monotonically improving policies and value functions:
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014040581.png)
-
-- where 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014037888.png)
-
-- 
-denotes a policy evaluation and 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014035904.png)
-
-- 
-denotes a policy improvement
-
-- 策略迭代算法
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014033511.png)
-
-#### 4\.4 价值迭代 \(Value Iteration\) 80
-
-- 价值迭代公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014031692.png)
-
-- 价值迭代算法
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014029626.png)
-
-#### 4\.6 广义策略迭代 \(Generalized Policy Iteration, GPI\) 84
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014027769.png)
-
-
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014025671.png)
-
-## 表格型方法 \(Tabular methods\)
-
-### 5 蒙特卡洛方法 \(Monte Carlo Methods\)
-
-- 能够使用历史经验或数据进行新策略的学习
-
-#### 5\.1 蒙特卡洛预测 \(Monte Carlo Prediction\) 90
+#### 5.1 蒙特卡洛预测 (Monte Carlo Prediction) 90
 
 给定策略 pai，计算状态价值函数，即蒙特卡洛策略评估。
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014023573.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031825410.png)
 
-5\.2 动作价值的蒙特卡洛估计 \(Monte Carlo Estimation of Action Values\) 的问题，某些状态\-动作二元组 \(s, a\) 可能永远也不会访问到\.
+5.2 动作价值的蒙特卡洛估计 (Monte Carlo Estimation of Action Values) 的问题，某些状态-动作二元组 (s, a) 可能永远也不会访问到.
 
-#### 5\.3 蒙特卡洛控制 Monte Carlo Control 95
+#### 5.3 蒙特卡洛控制 Monte Carlo Control 95
 
-##### 探索初始值蒙特卡洛算法 \( Monte Carlo Exploring Starts\)
+##### 探索初始值蒙特卡洛算法 ( Monte Carlo Exploring Starts)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014021636.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031826965.png)
 
-#### 5\.4 没有试探性出发假设的蒙特卡洛控制 Monte Carlo Control without Exploring Starts 98
+#### 5.4 没有试探性出发假设的蒙特卡洛控制 Monte Carlo Control without Exploring Starts 98
 
-##### 同轨策略 \(on\-policy\) vs 离轨策略 \(off\-policy\)
+##### 同轨策略 (on-policy) vs 离轨策略 (off-policy)
 
-- How can we avoid the unlikely assumption of exploring starts?
+* How can we avoid the unlikely assumption of exploring starts? 
 
-    - The only general way to ensure that all actions are selected infinitely often is for the agent to continue to select them\. There are two approaches to ensuring this, resulting in what we call on\-policy methods and off\-policy methods\.
+   * The only general way to ensure that all actions are selected infinitely often is for the agent to continue to select them. There are two approaches to ensuring this, resulting in what we call on-policy methods and off-policy methods.
 
-- 同轨策略 \(On\-policy methods\): attempt to evaluate or improve the policy that is used to make decisions
+* 同轨策略 (On-policy methods): attempt to evaluate or improve the policy that is used to make decisions
 
-- 离轨策略 \(off\-policy methods\): evaluate or improve a policy different from that used to generate the data\. 
+* 离轨策略 (off-policy methods): evaluate or improve a policy different from that used to generate the data. 
 
 ##### 首次访问 MC 控制算法 （同轨策略）
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014019573.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031828808.png)
 
-#### 5\.5 基于重要度采样的离轨策略 \(Off\-policy Prediction via Importance Sampling\) 101
+#### 5.5 基于重要度采样的离轨策略 (Off-policy Prediction via Importance Sampling) 101
 
-- How can they learn about the optimal policy while behaving according to an exploratory policy?
+* How can they learn about the optimal policy while behaving according to an exploratory policy?
 
-    - A more straightforward approach is to use two policies, one that is learned about and that becomes the optimal policy, and one that is more exploratory and is used to generate behavior\.
+   * A more straightforward approach is to use two policies, one that is learned about and that becomes the optimal policy, and one that is more exploratory and is used to generate behavior. 
 
-    - Target policy: the policy being learned about\.
+   * Target policy: the policy being learned about.
 
-    - Behavior policy: the policy used to generate behavior\.
+   * Behavior policy: the policy used to generate behavior. 
 
-- In this case we say that learning is from data “off” the target policy, and the overall process is termed **off\-policy learning**\.
+* In this case we say that learning is from data “off” the target policy, and the overall process is termed **off-policy learning**.
 
-- The relative probability of the trajectory under the target and behavior policiess \(**the importance\-sampling ratio**\) is
+* The relative probability of the trajectory under the target and behavior policiess (**the importance-sampling ratio**) is![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031830528.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014017599.png)
+* 加权重要度采样 (Weighted importance sampling)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031831747.png)
 
-- 加权重要度采样 \(Weighted importance sampling\)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014015565.png)
-
-#### 5\.6 增量式实现 \(Incremental Implementation\) 107
+#### 5.6 增量式实现 (Incremental Implementation) 107
 
 加权重要度采样公式：
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014013512.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031833165.png)
 ##### MC 预测或策略评估（离轨策略）
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014011485.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031834406.png)
 
-#### 5\.7 离轨策略蒙特卡洛控制 \(Off\-policy Monte Carlo Control\) 108
+#### 5.7 离轨策略蒙特卡洛控制 (Off-policy Monte Carlo Control) 108
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014009458.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031836135.png)
 
-### 6 时序差分学习 \(Temporal difference learning, TD\)
+### 6 时序差分学习 (Temporal difference learning, TD)
 
-- 相比蒙特卡洛方法，每步都更新而不是等到分幕结束。计算速度更快，准确性通常也更高。
+* 相比蒙特卡洛方法，每步都更新而不是等到分幕结束。计算速度更快，准确性通常也更高。
 
-#### 6\.1 时序差分预测 TD Prediction 117
+#### 6.1 时序差分预测 TD Prediction 117
 
-- A **simple every\-visit Monte Carlo method** suitable for nonstationary environments
+* A **simple every-visit Monte Carlo method** suitable for nonstationary environments![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031837892.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014007570.png)
+* The **simplest TD method**![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031839145.png)
 
-- The **simplest TD method**
+* Comparison：
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014005646.png)
+   * **Monte Carlo methods**must **wait until the end of the episode** to determine the increment to V (St) (only then is Gt known), the **target** is Gt.
 
-- Comparison：
+   * **TD methods** need to **wait only until the next time step**. At time t + 1 they immediately form a target and make a useful update using the observed reward Rt+1 and the estimate V (St+1). whereas the **target** is Rt+1 + V (St+1).
 
-    - **Monte Carlo methods**must **wait until the end of the episode** to determine the increment to V \(St\) \(only then is Gt known\), the **target** is Gt\.
+##### 表格 TD (0) 来估计 Vpai
 
-    - **TD methods** need to **wait only until the next time step**\. At time t \+ 1 they immediately form a target and make a useful update using the observed reward Rt\+1 and the estimate V \(St\+1\)\. whereas the **target** is Rt\+1 \+ �V \(St\+1\)\.
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031840330.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031842078.png)
+* MC 采用 6.3 来故居，TD 用 6.4 来故居。
 
-##### 表格 TD \(0\) 来估计 Vpai
+* TD error![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031843305.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014002500.png)
+* MC error 可以写为 TD error 的和：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031844605.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613014000444.png)
 
-- MC 采用 6\.3 来故居，TD 用 6\.4 来故居。
 
-- TD error
+##### 6.2 时序差分预测方法的优势 (Advantages of TD Prediction Methods) 122
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013958449.png)
+* 相比 DP 方法，TD 不需要一个收益和概率分布的模型。
 
-- MC error 可以写为 TD error 的和：
+* 相比 MC 方法，
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013956319.png)
+   * TD 是一种在线 (on line) 算法，不需要等到幕 (episode)  结束再更新。
 
-##### 6\.2 时序差分预测方法的优势 \(Advantages of TD Prediction Methods\) 122
+   * TD 通常能够更快的收敛。
 
-- 相比 DP 方法，TD 不需要一个收益和概率分布的模型。
+      * 随机游走 (Random Walk)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031846062.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031847285.png)
 
-- 相比 MC 方法，
+##### 6.3 TD(0) 的最优性 (Optimality of TD(0)) 124
 
-    - TD 是一种在线 \(on line\) 算法，不需要等到幕 \(episode\) 结束再更新。
+* 根据图所示的均方根误差度量，batch TD 方法能够比固定步长 MC 表现得更好![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031848504.png)
 
-    - TD 通常能够更快的收敛。
+#### 6.4 Sarsa：同轨策略下的时序差分控制 (TD Control) 127
 
-        - 随机游走 \(Random Walk\)
+* 情节  (episode) 由状态和状态-动作对的交替序列组成：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031849906.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031851103.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013954222.png)
-
-        - 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013952175.png)
-
-##### 6\.3 TD\(0\) 的最优性 \(Optimality of TD\(0\)\) 124
-
-- 根据图所示的均方根误差度量，batch TD 方法能够比固定步长 MC 表现得更好
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013949904.png)
-
-#### 6\.4 Sarsa：同轨策略下的时序差分控制 \(TD Control\) 127
-
-- 情节 \(episode\) 由状态和状态\-动作对的交替序列组成：
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013947864.png)
-
-- 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013945833.png)
-
-- 对应的动作价值函数公式：
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013943718.png)
+* 对应的动作价值函数公式：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031852163.png)
 
 ##### Sarsa 算法
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013941686.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031853353.png)
 
-#### 6\.5 Q 学习 \(Q\-learning\)：离轨策略下的时序差分控制 129
+#### 6.5 Q 学习 (Q-learning)：离轨策略下的时序差分控制 129
 
-- 公式
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031854859.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013939529.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031856108.png)
+* 悬崖徒步 (Cliff Walking) ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031857618.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031859048.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013937429.png)
 
-- 悬崖徒步 \(Cliff Walking\)
+##### 6.6 期望 Sarsa (Expected Sarsa) 131
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013934900.png)
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031901406.png)
 
-- 
+* 悬崖徒步问题中的性能比较![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031902601.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013933055.png)
-
-##### 6\.6 期望 Sarsa \(Expected Sarsa\) 131
-
-- 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013931210.png)
-
-- 悬崖徒步问题中的性能比较
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013929309.png)
-
-#### 6\.7 最大化偏差 \(Bias\) 与双学习 \(Double Learning\) 133
+#### 6.7 最大化偏差 (Bias) 与双学习 (Double Learning) 133
 
 ##### 双 Q 学习
 
-- Q 学习有最大化偏差问题，因此引入双 Q 学习
+* Q 学习有最大化偏差问题，因此引入双 Q 学习
 
-    - 某个状态下的真实动作价值函数 q\(s, a\) 全为 0，但 Q 学习取最大值时对 q\(s, a\) 的估计会是有些大于 0，有些小于 0，从而产生最大化偏差。
+   * 某个状态下的真实动作价值函数 q(s, a) 全为 0，但 Q 学习取最大值时对 q(s, a) 的估计会是有些大于 0，有些小于 0，从而产生最大化偏差。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031904087.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013927300.png)
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031905554.png)
 
-- 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013925012.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013922697.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031906755.png)
 ### 7 n 步自举法
 
-- TD 和 MC 通常不是最好的方法，走向了两个极端。n 步自举法是两种的折中，通常有更好的性能。
+* TD 和 MC 通常不是最好的方法，走向了两个极端。n 步自举法是两种的折中，通常有更好的性能。
 
-#### 7\.1 n 步时序差分 \(TD\) 预测 140
+#### 7.1 n 步时序差分 (TD) 预测 140
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013920553.png)
-
-- 公式：
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013918222.png)
-
-- 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013916145.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031908845.png)
+* 公式：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031911442.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031912660.png)
 
 ##### n 步 TD
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013913696.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031913835.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031915342.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013911636.png)
+#### 7.2 n 步 Sarsa 144
 
-#### 7\.2 n 步 Sarsa 144
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031917588.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031918826.png)
 
-- 公式
+   * 其中 t+n >= T。
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013909584.png)
-
-- 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013907483.png)
-
-- 其中 t\+n \>= T。
 
 ##### n 步 Sarsa
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013905400.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031919992.png)
+#### 7.3 n 步离轨策略学习 146
 
-#### 7\.3 n 步离轨策略学习 146
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031921769.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031922986.png)
 
-- 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013903100.png)
-
-- 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013859187.png)
-
-- 重要度采样
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013856671.png)
+* 重要度采样![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031924392.png)
 
 ##### 离轨策略 n 步 Sarsa
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013854560.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031925611.png)
+#### 7.5 不需要使用重要度采样的离轨策略学习方法 150
 
-#### 7\.5 不需要使用重要度采样的离轨策略学习方法 150
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013851905.png)
-
-- 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013849624.png)
-
-- 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013847548.png)
-
-- 
-\(和 n 步 SARSA 一样\)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031927322.png)
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031928550.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031929754.png)(和 n 步 SARSA 一样)
 
 ##### n步树回溯算法
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013845486.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031930998.png)
 ### 8 基于表格型方法的规划和学习
 
-- 增加了规划和学习，相比之前增加了从模型学习的反馈循环。
+* 增加了规划和学习，相比之前增加了从模型学习的反馈循环。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031933106.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013843454.png)
+#### 8.1 模型（Models）和规划 (Planning) 157
 
-#### 8\.1 模型（Models）和规划 \(Planning\) 157
+* 模型：指智能体可以用来预测环境对其动作的反馈的任何事物。
 
-- 模型：指智能体可以用来预测环境对其动作的反馈的任何事物。
+* 分布模型 (distribution model)：生成对所有可能结果的描述及其对应的概率分布的模型。
 
-- 分布模型 \(distribution model\)：生成对所有可能结果的描述及其对应的概率分布的模型。
+* 样本模型 (sample model)：从所有可能行中生成一个确定性的结果，这个结果通过概率分布采样得到。
 
-- 样本模型 \(sample model\)：从所有可能行中生成一个确定性的结果，这个结果通过概率分布采样得到。
+* 规划：此处代表任何以环境模型 (model) 为输入，并生成或改进与其进行交互的策略的计算过程![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031934318.png)
 
-- 规划：此处代表任何以环境模型 \(model\) 为输入，并生成或改进与其进行交互的策略的计算过程
+* 状态空间规划算法的通用结构
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013841180.png)
+   * 1）所有的状态空间规划算法都会利用价值函数作为改善策略的关键中间步骤
 
-- 状态空间规划算法的通用结构
-
-    - 1）所有的状态空间规划算法都会利用价值函数作为改善策略的关键中间步骤
-
-    - 2）通过仿真经验的回溯操作来计算价值函数。
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013838558.png)
+   * 2）通过仿真经验的回溯操作来计算价值函数。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031935539.png)
 
 ##### 单步 Q 规划
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013836204.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031936736.png)
+#### 8.2 Dyna：集成在一起的规划、动作和学习 159
 
-#### 8\.2 Dyna：集成在一起的规划、动作和学习 159
+* 通过模型的学习，增加新的反馈循环过程![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031938195.png)
 
-- 通过模型的学习，增加新的反馈循环过程
+* 通用 Dyna 架构 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031939469.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013834164.png)
+##### 表格型 Dyna-Q 算法
 
-- 通用 Dyna 架构 
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031941211.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031943380.png)
+#### 8.3 当模型错误的时候 164
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013816154.png)
+* Dyna-Q+: 为鼓励测试长期未采取的动作，为期增加额外收益![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031944839.png)
 
-##### 表格型 Dyna\-Q 算法
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013813831.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031946268.png)
+#### 8.4 优先遍历 Prioritized Sweeping 166
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013811546.png)
+* 优先级遍历的思想：
 
-#### 8\.3 当模型错误的时候 164
+   * 1）通过从目标状态反向搜索，是的遍历的范围更为集中；
 
-- Dyna\-Q\+: 为鼓励测试长期未采取的动作，为期增加额外收益
+   * 2）为解决反响推演时，范围迅速扩大的问题，根据某种迫切性对更新进行优先级排序。
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013809357.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013807304.png)
-
-#### 8\.4 优先遍历 Prioritized Sweeping 166
-
-- 优先级遍历的思想：
-
-    - 1）通过从目标状态反向搜索，是的遍历的范围更为集中；
-
-    - 2）为解决反响推演时，范围迅速扩大的问题，根据某种迫切性对更新进行优先级排序。
-
-        - 例如：若某个“状态\-动作”而远足在更新之后的价值变化是不可忽略的，则将其放入优先队列维护。这个队列按照价值改变的大小来进行优先级排序。
+      * 例如：若某个“状态-动作”而远足在更新之后的价值变化是不可忽略的，则将其放入优先队列维护。这个队列按照价值改变的大小来进行优先级排序。
 
 ##### 优先遍历算法
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013805185.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031947744.png)
+8.5 期望更新与采样更新的对比 170
 
-8\.5 期望更新与采样更新的对比 170
+8.6 轨迹采样 Trajectory Sampling 173
 
-8\.6 轨迹采样 Trajectory Sampling 173
+8.7 实时动态规划 Real-time Dynamic Programming 176
 
-8\.7 实时动态规划 Real\-time Dynamic Programming 176
+8.8 决策时规划 Planning at Decision Time 179
 
-8\.8 决策时规划 Planning at Decision Time 179
+8.9 启发式搜索 Heuristic Search 180
 
-8\.9 启发式搜索 Heuristic Search 180
+8.10 预演算法 Rollout Algorithms 182
 
-8\.10 预演算法 Rollout Algorithms 182
-
-8\.11 蒙特卡洛树搜索 Monte Carlo Tree Search 184
+8.11 蒙特卡洛树搜索 Monte Carlo Tree Search 184
 
 ### 第一部分总结
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013802946.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031949781.png)
 
-## 近似求解方法 \(Approximate solution methods\)
+## 近似求解方法 (Approximate solution methods)
 
-### 9 基于函数近似 \(approximation\) 的同轨策略预测 195
+### 9 基于函数近似 (approximation) 的同轨策略预测 195
 
-- 增加函数近似。不再用表格来表示价值函数，而是用一个具有参数 \(如 W）的近似价值函数。近似价值函数如线性方法、人工神经网络。
+* 增加函数近似。不再用表格来表示价值函数，而是用一个具有参数 (如 W）的近似价值函数。近似价值函数如线性方法、人工神经网络。
 
-- 因为线性方法不能表示所有的特征关系，因此引入特征构造的方法，如粗编码和瓦片编码。
+* 因为线性方法不能表示所有的特征关系，因此引入特征构造的方法，如粗编码和瓦片编码。
 
-#### 9\.2 预测目标 196
+#### 9.2 预测目标 196
 
-- 均方价值误差 
+* 均方价值误差 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031951939.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013800554.png)
+#### 9.3 随机梯度和半梯度方法 198
 
-#### 9\.3 随机梯度和半梯度方法 198
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031953160.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031954564.png)
 
-- 公式
+##### 梯度 MC (Gradient Monte Carlo) - 估计 v
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013758137.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031955829.png)
+##### 半梯度 TD(0) - 估计 v
 
-- 
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031957560.png)
+#### 9.4 线性方法 202
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013756300.png)
+* 是神经网络的基础，类似于逻辑回归 (logistics regression)
 
-##### 梯度 MC \(Gradient Monte Carlo\) \- 估计 v
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031959258.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032000088.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032001260.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013753966.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032003379.png)
+##### n 步半梯度 TD - 估计 v
 
-##### 半梯度 TD\(0\) \- 估计 v
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032006001.png)
+#### 9.5 线性方法的特征构造 207
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013751898.png)
+##### 9.5.3 粗 (Coarse) 编码 212
 
-#### 9\.4 线性方法 202
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032007690.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032009396.png)
 
-- 是神经网络的基础，类似于逻辑回归 \(logistics regression\)
+##### 9.5.4 瓦片 (Tile) 编码 214
 
-- 公式
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032010672.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032012929.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013749939.png)
+#### 9.7 非线性函数逼近：人工神经网络 220
 
-- 
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032014949.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013747456.png)
+#### 9.8 最小二乘时序差分 (Least-Squares) TD 225
 
-- 
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032016641.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013745623.png)
+##### Least square TD (LSTD) - 估计 v
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013743521.png)
-
-##### n 步半梯度 TD \- 估计 v
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013741648.png)
-
-#### 9\.5 线性方法的特征构造 207
-
-##### 9\.5\.3 粗 \(Coarse\) 编码 212
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013739303.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013737123.png)
-
-##### 9\.5\.4 瓦片 \(Tile\) 编码 214
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013734924.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013732820.png)
-
-#### 9\.7 非线性函数逼近：人工神经网络 220
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013730527.png)
-
-#### 9\.8 最小二乘时序差分 \(Least\-Squares\) TD 225
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013728749.png)
-
-##### Least square TD \(LSTD\) \- 估计 v
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013726827.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032018090.png)
 ### 10 基于函数逼近的同轨策略控制 239
 
-- 通过近似的动作价值函数
+* 通过近似的动作价值函数![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032020144.png)来解决控制问题。
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013724528.png)
+#### 10.1 分幕式半梯度控制 239
 
-- 
-来解决控制问题。
+* 公式：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032021339.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032022737.png)
 
-#### 10\.1 分幕式半梯度控制 239
 
-- 公式：
+##### 分幕式半梯度 SARSA - 估计 q
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013722445.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032023934.png)
+#### 10.2 半梯度 n 步 Sarsa 242
 
-- 
+* 公式：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032025649.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032026871.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013720570.png)
 
-##### 分幕式半梯度 SARSA \- 估计 q
+##### 分幕式半梯度 n 步 SARSA - 估计 q
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013718534.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032028074.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032030265.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032032106.png)
 
-#### 10\.2 半梯度 n 步 Sarsa 242
+#### 10.3 平均收益 (Average Reward)：持续性任务中的新的问题设定 245
 
-- 公式：
+* 平均收益：一个策略 pai 的质量被定义为在遵循该策略时的收益率的平均值。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032034460.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013716542.png)
+* 差分价值方程：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032035864.png)
 
-- 
+* 差分 TD error![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032037602.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013714448.png)
+* 差分半梯度 Sarsa 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032038987.png)
 
-##### 分幕式半梯度 n 步 SARSA \- 估计 q
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013712088.png)
+##### 差分半梯度 Sarsa - 估计 q
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013709757.png)
+* 增加平均收益 (average reward)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013707428.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032040426.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032042252.png)
+#### 10.5 差分 (Differential) 半梯度 n 步 Sarsa 251
 
-#### 10\.3 平均收益 \(Average Reward\)：持续性任务中的新的问题设定 245
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032044207.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032045430.png)
 
-- 平均收益：一个策略 pai 的质量被定义为在遵循该策略时的收益率的平均值。
+##### 差分半梯度 n 步 Sarsa - 估计 q
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013705455.png)
-
-- 差分价值方程：
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013703162.png)
-
-- 差分 TD error
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013701048.png)
-
-- 差分半梯度 Sarsa 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013657187.png)
-
-##### 差分半梯度 Sarsa \- 估计 q
-
-- 增加平均收益 \(average reward\)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013655212.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013652832.png)
-
-#### 10\.5 差分 \(Differential\) 半梯度 n 步 Sarsa 251
-
-- 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013650423.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013648135.png)
-
-##### 差分半梯度 n 步 Sarsa \- 估计 q
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013645662.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032046863.png)
 
 ### 第13章 策略梯度方法 317
 
-- 对策略本身进行函数化。
+* 对策略本身进行函数化。
 
-#### 13\.1 策略近似及其优势 318
+#### 13.1 策略近似及其优势 318
 
-- 增加策略近似，参数 theta
+* 增加策略近似，参数 theta
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013643299.png)
+   * ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032048920.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013640899.png)
+   * ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032050169.png)
 
-#### 13\.2 策略梯度定理 320
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013638545.png)
+#### 13.2 策略梯度定理 320
 
-- 定理：
+* ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032051576.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013636600.png)
+* 定理：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032053011.png)
 
-#### 13\.3 REINFORCE：蒙特卡洛策略梯度 322
 
-- 公式
+#### 13.3 REINFORCE：蒙特卡洛策略梯度 322
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013634544.png)
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032054069.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032055294.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032056750.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032058519.png)
 
-- 
+##### REINFORCE：蒙特卡洛策略梯度控制 - pai
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013632493.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032059753.png)
+#### 13.4 带有基线 (baseline) 的 REINFORCE 325
 
-- 
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032101518.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032102929.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032104178.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013630159.png)
+   * 其中 b(s) 是基线
 
-- 
+##### 带有基线的 REINFORCE (分幕问题) - 估计 pai
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013628026.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032106113.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032107926.png)
 
-##### REINFORCE：蒙特卡洛策略梯度控制 \- pai
+#### 13.5 “行动器-评判器”方法 (Actor–Critic) 327
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013625695.png)
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032109524.png)
 
-#### 13\.4 带有基线 \(baseline\) 的 REINFORCE 325
+##### 单步 Actor-Critic (分幕问题) - 估计 pai
 
-- 公式
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032110868.png)
+##### 带有资格迹的 Actor-Critic (分幕问题) - 估计 pai
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013623330.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032112653.png)
+#### 13.6 持续性问题的策略梯度 329
 
-- 
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032114877.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032116330.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013621145.png)
+##### Actor-Critic (连续问题) - 估计 pai
 
-- 
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032117770.png)
+##### 带有资格迹的 Actor-Critic (连续问题) - 估计 pai
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013619059.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032120153.png)
 
-- 其中 b\(s\) 是基线
+#### 13.7 针对连续动作的策略参数化方法 332
 
-##### 带有基线的 REINFORCE \(分幕问题\) \- 估计 pai
+* 正态分布概率密度方程（PDF）![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032122115.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032123344.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013616710.png)
+* 公式![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032125075.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032126307.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013614425.png)
 
-#### 13\.5 “行动器\-评判器”方法 \(Actor–Critic\) 327
-
-- 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013612025.png)
-
-##### 单步 Actor\-Critic \(分幕问题\) \- 估计 pai
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013609709.png)
-
-##### 带有资格迹的 Actor\-Critic \(分幕问题\) \- 估计 pai
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013607563.png)
-
-#### 13\.6 持续性问题的策略梯度 329
-
-- 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013605259.png)
-
-- 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013603175.png)
-
-##### Actor\-Critic \(连续问题\) \- 估计 pai
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013601295.png)
-
-##### 带有资格迹的 Actor\-Critic \(连续问题\) \- 估计 pai
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013558913.png)
-
-#### 13\.7 针对连续动作的策略参数化方法 332
-
-- 正态分布概率密度方程（PDF）
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013556475.png)
-
-- 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013553606.png)
-
-- 公式
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013551502.png)
-
-- 
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013548895.png)
-
-## 强化学习 \(RL\) 实践
+## 强化学习 (RL) 实践
 
 ### 直升飞机螺旋控制
 
-- 课本讲的学习模型来训练策略的方法，实际中工程师并不是这样做。原因是这样生成的策略并 不稳定。
+* 课本讲的学习模型来训练策略的方法，实际中工程师并不是这样做。原因是这样生成的策略并 不稳定。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032127574.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032128786.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032130172.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013546208.png)
+* 通常会用无悔算法和最优控制（控制相关的算法），可以在测试集上得到比较好的性能。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032132265.png)
 
-- 
+* 在此过程中，会做多轮迭代，最终可以得到一个比较稳定的控制策略。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032135284.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013543740.png)
 
-- 
+#### 无悔算法 (No-regret algorithm)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013541103.png)
+* 会使用无悔算法 (No-regret algorithm)
 
-- 通常会用无悔算法和最优控制（控制相关的算法），可以在测试集上得到比较好的性能。
+   * 从先前数据中选取好的特征
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013538248.png)
+   * 生成一个稳定的特征序列![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032137706.png)
 
-- 在此过程中，会做多轮迭代，最终可以得到一个比较稳定的控制策略。
+#### 最优控制 (Optimal Control)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013535630.png)
-
-#### 无悔算法 \(No\-regret algorithm\)
-
-- 会使用无悔算法 \(No\-regret algorithm\)
-
-    - 从先前数据中选取好的特征
-
-    - 生成一个稳定的特征序列
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013533142.png)
-
-#### 最优控制 \(Optimal Control\)
-
-- 在此基础上，会增加一个最优控制 \(Optimal Control\) 生成的机制，来提升训练效果
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013530526.png)
+* 在此基础上，会增加一个最优控制 (Optimal Control) 生成的机制，来提升训练效果![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613032140199.png)

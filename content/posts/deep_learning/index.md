@@ -1,10 +1,10 @@
 ---
 title: "DL 深度学习笔记"
 subtitle: ""
-date: 2022-02-11
-draft: true
+date: 2021-06-14
+draft: false
 author: "Xiaopeng Xu"
-description: "深度学习基础学习笔记：神经网络、反向传播与常见模型要点。"
+description: "DL 深度学习笔记相关笔记。"
 tags: ["Deep Learning", "Basic"]
 categories: ["Technology"]
 lightgallery: true
@@ -12,255 +12,217 @@ toc:
   enable: true
 ---
 
-参考：https://www\.coursera\.org/specializations/deep\-learning?
-
 ## NN 基础
 
 ### 二分类问题
 
-- 对 64x64x3 的图片，判断是否有猫（1/0）
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013520508.png)
+* 对 64x64x3  的图片，判断是否有猫（1/0）![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030752833.png)
 
 #### 基本标记
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013516909.png)
+* ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030754968.png)
 
-- X 的每一行对应的是一个样本，每一列对应的是一个特征。
+* X 的每一行对应的是一个样本，每一列对应的是一个特征。
 
-### 逻辑回归 \(Logistics regression\)
+### 逻辑回归 (Logistics regression)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013513633.png)
+* ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030757234.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013511160.png)
+* ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030758759.png)
 
-- 二分类情况下，对应的 delta 函数是 sigmoid 函数。
+* 二分类情况下，对应的 delta 函数是 sigmoid 函数。
 
 #### Sigmoid 函数
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013508165.png)
+* ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030800262.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013505720.png)
+* ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030801097.png)
 
-#### 代价函数 \(cost function\)
+#### 代价函数 (cost function)
 
-- 目标：
+* 目标：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030802859.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013502653.png)
+##### 损失函数 (loss/error function)
 
-##### 损失函数 \(loss/error function\)
+* 损失函数 (loss function) 针对每一个样本计算的误差
 
-- 损失函数 \(loss function\) 针对每一个样本计算的误差
+* MSE 通常会受限于局部最小值 (local minimum) 而不能找到全局最小值 (global minimum) 因而实际中不常使用。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030804355.png)
 
-- MSE 通常会受限于局部最小值 \(local minimum\) 而不能找到全局最小值 \(global minimum\) 因而实际中不常使用。
+* 实际中更常用的是下面这个： ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030805450.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030806591.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013500128.png)
+   * 举例分析：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030807779.png)
 
-- 实际中更常用的是下面这个：
+##### 代价函数 (cost function)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013457933.png)
+* 代价函数是损失函数的平均值，在一个循环中只计算一次。
 
-    - 举例分析：
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030810003.png)
+### 梯度下降法 (Gradient descent)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013455211.png)
+* 目标：找到 w 和 b，以最小化损失函数 (loss function)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030811749.png)
 
-##### 代价函数 \(cost function\)
+#### 梯度 (gradient)
 
-- 代价函数是损失函数的平均值，在一个循环中只计算一次。
+* ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030813920.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013451662.png)
+* 思想：在每次循环中，叠加导数值，这样可以逼近最优点 (mimimum)
 
-### 梯度下降法 \(Gradient descent\)
+* ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030815477.png)
 
-- 目标：找到 w 和 b，以最小化损失函数 \(loss function\)
+* 通过偏导数，来计算导数函数。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030816931.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013448574.png)
-
-#### 梯度 \(gradient\)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013445722.png)
-
-- 思想：在每次循环中，叠加导数值，这样可以逼近最优点 \(mimimum\)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013443540.png)
-
-- 通过偏导数，来计算导数函数。
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013441008.png)
-
-#### 导数 \(derivative\)
+#### 导数 (derivative)
 
 ##### 线性函数的导数
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013438615.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030818713.png)
 ##### 二次方程的导数
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013435951.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030820596.png)
 ##### 更多导数
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013433081.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030822739.png)
 ### 计算图
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013430465.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030825151.png)
 #### 按计算图计算导数
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013427752.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013424881.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030826611.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030828969.png)
 
 ### 深度神经网络
 
-- 表示符号
+* 表示符号![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030831645.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013421988.png)
+   * L 表示层数
 
-- L 表示层数
+   * n[1], 表示 1 层中的节点数
 
-- n\[1\], 表示 1 层中的节点数
+   * z[1], 表示 1 层中的 (W[1]*x[0] +b[1])
 
-- z\[1\], 表示 1 层中的 \(W\[1\]\*x\[0\] \+b\[1\]\)
+   * a[1], 表示 1 层中的激活值 g(z[1])，g 常用 ReLU
 
-- a\[1\], 表示 1 层中的激活值 g\(z\[1\]\)，g 常用 ReLU
 
 ## RNN
 
-- 可以直观理解为相比传统的 NN 增加了时序记忆能力。但 Transformer 这种大网络中，也增加了类似 CNN 的抽象能力 \(即 Multi\-head attention\)。
+* 可以直观理解为相比传统的 NN 增加了时序记忆能力。但 Transformer 这种大网络中，也增加了类似 CNN 的抽象能力 (即 Multi-head attention)。
 
 ### 应用
 
-- 语音识别、音乐生成、情感分类、DNA 序列分析、机器翻译、视频行为识别、命名实体识别
+* 语音识别、音乐生成、情感分类、DNA 序列分析、机器翻译、视频行为识别、命名实体识别
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013419375.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030833883.png)
+### 词表示 (word representation)
 
-### 词表示 \(word representation\)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013416677.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030836814.png)
 ### 为什么不用标准的神经网络？
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013413738.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030839408.png)
 ### 简单的 RNN
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013411394.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030842303.png)
+##### 前向传播 (Forward propagation)
 
-##### 前向传播 \(Forward propagation\)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013408792.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030844461.png)
 ##### 简化的标记符
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013406117.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030846697.png)
+##### 时间反向传播 (backpropagation through time)
 
-##### 时间反向传播 \(backpropagation through time\)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013404126.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013401218.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030849778.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030851494.png)
 
 ### RNN 类型
 
-- 多对多，多对一，一对一，一对多
+* 多对多，多对一，一对一，一对多
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013358607.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030853705.png)
 
-### GRU \(Gated Recurrent Unit\)
+### GRU (Gated Recurrent Unit)
 
 #### RNN unit
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013355738.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030855583.png)
+#### GRU (simplified)
 
-#### GRU \(simplified\)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013352867.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030857385.png)
 #### 完整的 GRU
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013349451.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030859566.png)
 u=update, r=remember
 
-### \*LSTM \(long short term memory\)
+### *LSTM (long short term memory)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013347130.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030901553.png)
 u=update, r=remember, 0=output, f=forget
 
-GRU removed a in passing, removed forget gate, using "1 \- update" instead, and remember gate is similar to output gate\.
+GRU removed a<t> in passing, removed forget gate, using "1 - update" instead, and remember gate is similar to output gate.
 
-Significantly improve computing effenciency\.
+Significantly improve computing effenciency.
+
 
 #### 前向传播 Forward Illustration
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013344957.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013343147.png)
-
-A gate is a sigmoid function with w and b\. Softmax also contains a w and b\.
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030903278.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030905093.png)
+A gate is a sigmoid function with w and b. Softmax also contains a w and b.
 
 ##### Forget gate
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013340990.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030907158.png)
+* `Wf`: forget gate weight 𝐖𝑓
 
-- `Wf`: forget gate weight 𝐖𝑓
+* `bf`: forget gate bias 𝐛𝑓
 
-- `bf`: forget gate bias 𝐛𝑓
-
-- `ft`: forget gate Γ⟨𝑡⟩
+* `ft`: forget gate Γ⟨𝑡⟩
 
 ##### Candidate value
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013338344.png)
-
-- `cct`: candidate value 𝐜̃⟨𝑡⟩
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030908357.png)
+* `cct`: candidate value 𝐜̃⟨𝑡⟩
 
 ##### Update gate
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013336250.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030909542.png)
+* `Wi` is the update gate weight 𝐖𝑖
 
-- `Wi` is the update gate weight 𝐖𝑖
+* `bi` is the update gate bias 𝐛𝑖
 
-- `bi` is the update gate bias 𝐛𝑖
-
-- `it` is the update gate 𝚪⟨𝑡⟩𝑖
+* `it` is the update gate 𝚪⟨𝑡⟩𝑖
 
 ##### Cell state
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013333930.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030910771.png)
 
-- `c`: cell state, including all time steps, 𝐜 shape \(𝑛𝑎,𝑚,𝑇𝑥\)
+* `c`: cell state, including all time steps, 𝐜 shape (𝑛𝑎,𝑚,𝑇𝑥)
 
-- `c_next`: new \(next\) cell state, 𝐜⟨𝑡⟩ shape \(𝑛𝑎,𝑚\)
+* `c_next`: new (next) cell state, 𝐜⟨𝑡⟩ shape (𝑛𝑎,𝑚)
 
-- `c_prev`: previous cell state, 𝐜⟨𝑡−1⟩, shape \(𝑛𝑎,𝑚\)
+* `c_prev`: previous cell state, 𝐜⟨𝑡−1⟩, shape (𝑛𝑎,𝑚)
 
 ##### Output gate
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013331676.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030911989.png)
 
-- `Wo`: output gate weight, 𝐖𝐨
+* `Wo`: output gate weight, 𝐖𝐨
 
-- `bo`: output gate bias, 𝐛𝐨
+* `bo`: output gate bias, 𝐛𝐨
 
-- `ot`: output gate, 𝚪⟨𝑡⟩𝑜
+* `ot`: output gate, 𝚪⟨𝑡⟩𝑜
 
-- `a`: hidden state, including time steps\. 𝐚 has shape \(𝑛𝑎,𝑚,𝑇𝑥\)
+* `a`: hidden state, including time steps. 𝐚 has shape (𝑛𝑎,𝑚,𝑇𝑥)
 
-- `a_prev`: hidden state from previous time step\. 𝐚⟨𝑡−1⟩ has shape \(𝑛𝑎,𝑚\)
+* `a_prev`: hidden state from previous time step. 𝐚⟨𝑡−1⟩ has shape (𝑛𝑎,𝑚)
 
-- `a_next`: hidden state for next time step\. 𝐚⟨𝑡⟩ has shape \(𝑛𝑎,𝑚\)
+* `a_next`: hidden state for next time step. 𝐚⟨𝑡⟩ has shape (𝑛𝑎,𝑚)
 
-- `y_pred`: prediction, including all time steps\. 𝐲𝑝𝑟𝑒𝑑 has shape \(𝑛𝑦,𝑚,𝑇𝑥\)
+* `y_pred`: prediction, including all time steps. 𝐲𝑝𝑟𝑒𝑑 has shape (𝑛𝑦,𝑚,𝑇𝑥)
 
-- `yt_pred`: prediction for the current time step 𝑡\. 𝐲⟨𝑡⟩𝑝𝑟𝑒𝑑 has shape \(𝑛𝑦,𝑚\)
+* `yt_pred`: prediction for the current time step 𝑡. 𝐲⟨𝑡⟩𝑝𝑟𝑒𝑑 has shape (𝑛𝑦,𝑚)
 
 ##### 代码
 
-```Python
+```python
 def lstm_cell_forward(xt, a_prev, c_prev, parameters):
     # Retrieve parameters from "parameters"
     Wf = parameters["Wf"] # forget gate weight
@@ -300,45 +262,37 @@ def lstm_cell_forward(xt, a_prev, c_prev, parameters):
     return a_next, c_next, yt_pred, cache
 ```
 
+
 #### 反向传播
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013329368.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013327275.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030913267.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030914840.png)
 
 ##### 公式
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013324923.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030916840.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030918093.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030919320.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030920543.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030921754.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030922798.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030924222.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030925285.png)
+* 𝑑𝑥⟨𝑡⟩ is represented by dxt,   
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013323134.png)
+* 𝑑𝑊𝑎𝑥 is represented by dWax,   
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013321051.png)
+* 𝑑𝑎𝑝𝑟𝑒𝑣 is represented by da_prev,    
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013318975.png)
+* 𝑑𝑊𝑎𝑎 is represented by dWaa,   
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013317035.png)
+* 𝑑𝑏𝑎 is represented by dba,   
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013314989.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013312874.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013310480.png)
-
-- 𝑑𝑥⟨𝑡⟩ is represented by dxt,
-
-- 𝑑𝑊𝑎𝑥 is represented by dWax,
-
-- 𝑑𝑎𝑝𝑟𝑒𝑣 is represented by da\_prev,
-
-- 𝑑𝑊𝑎𝑎 is represented by dWaa,
-
-- 𝑑𝑏𝑎 is represented by dba,
-
-- `dz` is not derived above but can optionally be derived by students to simplify the repeated calculations\.
+* `dz` is not derived above but can optionally be derived by students to simplify the repeated calculations.
 
 ##### 代码
 
-```Python
+```python
 ef rnn_cell_backward(da_next, cache):
     # Retrieve values from cache
     (a_next, a_prev, xt, parameters) = cache
@@ -369,126 +323,97 @@ ef rnn_cell_backward(da_next, cache):
     
     return gradients
 ```
-
 #### 反向信息传递
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013308147.png)
-
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030926324.png)
 ##### 公式
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013305893.png)
+#### ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030927822.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013303870.png)
+#### ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030929581.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013301758.png)
+#### ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030930817.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013259855.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030932055.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030933265.png)
+* 𝑑𝛾⟨𝑡⟩𝑜 is represented by `dot`,
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013257734.png)
+* 𝑑𝑝𝑐˜⟨𝑡⟩ is represented by `dcct`,
 
-- 𝑑𝛾⟨𝑡⟩𝑜 is represented by `dot`,
+* 𝑑𝛾⟨𝑡⟩𝑢 is represented by `dit`,
 
-- 𝑑𝑝𝑐˜⟨𝑡⟩ is represented by `dcct`,
+* 𝑑𝛾⟨𝑡⟩𝑓 is represented by `dft` 
 
-- 𝑑𝛾⟨𝑡⟩𝑢 is represented by `dit`,
-
-- 𝑑𝛾⟨𝑡⟩𝑓 is represented by `dft`
 
 ### 其他 RNN
 
-#### 双向 RNN \(Bidirectional RNN\)
+#### 双向 RNN (Bidirectional RNN)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013255677.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013253588.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030934431.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030936124.png)
 
 #### Deep RNN
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013251257.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030938257.png)
 
-### \*Transformers / BERT
+### *Transformers / BERT
 
-Vaswani et al\. 2017, Attention Is All You Need
+Vaswani et al. 2017, Attention Is All You Need
 
-#### 动机 \(Motivation\) 和直觉 \(Intuition\)
+#### 动机 (Motivation) 和直觉 (Intuition)
 
-##### 动机 \(Motivation\)
+##### 动机 (Motivation) 
 
-- RNN \-\> GRU \-\> LSTM 是在时序上增加复杂度
+* RNN -> GRU -> LSTM 是在时序上增加复杂度
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013247826.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030940142.png)
+##### 直觉 (Intuition)
 
-##### 直觉 \(Intuition\)
+* 能否通过注意力机制 (Attention) 和 CNN 在平行层面增加抽象层次？
 
-- 能否通过注意力机制 \(Attention\) 和 CNN 在平行层面增加抽象层次？
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013245650.png)
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013243620.png)
-
-#### 自注意力机制 \(Self\-attention\)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030942307.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030943758.png)
+#### 自注意力机制 (Self-attention)
 
 ##### 自注意力机制的直觉
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013241490.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030945018.png)
+* 整体上和 RNN 中的 attention 机制相似，都有 softmax 计算![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030946454.png)
 
-- 整体上和 RNN 中的 attention 机制相似，都有 softmax 计算
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013239491.png)
-
-- 不同之处是，为每一个词增加了 K 和 V 向量表示，类似于数据库中的 k 和 v，如下
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013236961.png)
+* 不同之处是，为每一个词增加了 K 和 V 向量表示，类似于数据库中的 k 和 v，如下![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030948182.png)
 
 ##### 计算过程
 
-- 计算A\<3\> 时，会对附近词的 K 和 V 都纳入计算，K 作为 attention 权重输入， V 作为 attention 数值的输入
+* 计算A<3> 时，会对附近词的 K 和 V 都纳入计算，K 作为 attention 权重输入， V 作为 attention 数值的输入![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030950219.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013234948.png)
+* 对应的向量公式：![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030952422.png)。dk 是一个 scale 项，对结果的影响可以忽略。
 
-- 对应的向量公式：
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013232802.png)
+#### Multi-Head Attention
 
-- 
-。dk 是一个 scale 项，对结果的影响可以忽略。
+* 每一个 head 就像是问了一个问题，不同问题对应的附近词的权重会不相同![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030953646.png)
 
-#### Multi\-Head Attention
-
-- 每一个 head 就像是问了一个问题，不同问题对应的附近词的权重会不相同
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013230639.png)
-
-- 在计算 Multi\-head attention 的时候，会把各个 head 的计算结果拼接在一起来计算出一个总体的权重。
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013228373.png)
+* 在计算 Multi-head attention 的时候，会把各个 head 的计算结果拼接在一起来计算出一个总体的权重。![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030955856.png)
 
 #### Transformer 详情
 
-##### 核心框架 Encoder \& Decoder
+##### 核心框架 Encoder & Decoder
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013226534.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030957359.png)
+* Encoder 和 Decoder 都会计算 N 次， Decoder 上次的输出，会加入到下次的输入。
 
-- Encoder 和 Decoder 都会计算 N 次， Decoder 上次的输出，会加入到下次的输入。
-
-- 如何获得 K 和 V 向量？
+* 如何获得 K 和 V 向量？
 
 ##### 提升 transformer 性能的其他机制
 
-1. 位置编码 \(Positional Encoding\) 
+1. 位置编码 (Positional Encoding) ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031000066.png)![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031001614.png)
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013224463.png)
+2. ResNet connections：将位置信息传递到整个架构中。
 
-1. 
+3. Add & Norm： 可以加块训练速度。
 
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013222396.png)
+4. Linear & Softmax layer：来预测下一个词。
 
-1. ResNet connections：将位置信息传递到整个架构中。
+5. Masked mult-head attention：在训练过程中模拟真实预测的场景，每次增加一个新词。
 
-2. Add \& Norm： 可以加块训练速度。
-
-3. Linear \& Softmax layer：来预测下一个词。
-
-4. Masked mult\-head attention：在训练过程中模拟真实预测的场景，每次增加一个新词。
-
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613013220070.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613031003040.png)

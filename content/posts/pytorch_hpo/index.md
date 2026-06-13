@@ -16,7 +16,7 @@ toc:
 
 总结如下：
 
-- [https://docs\.google\.com/spreadsheets/d/e/2PACX\-1vQQngvMHiqVNND4\-pBHq\-2\_S4SfJFnBn1qg4V\_RsnG28qBJ4EV3soATwpq\-YaShLDz2437FcH11\-JLp/pubhtml?gid=0\&single=true](https://docs.google.com/spreadsheets/d/e/2PACX-1vQQngvMHiqVNND4-pBHq-2_S4SfJFnBn1qg4V_RsnG28qBJ4EV3soATwpq-YaShLDz2437FcH11-JLp/pubhtml?gid=0&single=true)Google Vizer, AWS Sage Maker, 和 Azure Machine Learning 付费不开源，可以忽略。
+- [https://docs\.google\.com/spreadsheets/d/e/2PACX\-1vQQngvMHiqVNND4\-pBHq\-2\_S4SfJFnBn1qg4V\_RsnG28qBJ4EV3soATwpq\-YaShLDz2437FcH11\-JLp/pubhtml?gid=0\&single=true](https://docs.google.com/spreadsheets/d/e/2PACX-1vQQngvMHiqVNND4-pBHq-2_S4SfJFnBn1qg4V_RsnG28qBJ4EV3soATwpq-YaShLDz2437FcH11-JLp/pubhtml?gid=0&single=true)  Google Vizer, AWS Sage Maker, 和 Azure Machine Learning 付费不开源，可以忽略。
 
 - Scikit\-Optimize 不支持 GPU，忽略。
 
@@ -56,7 +56,7 @@ pip install nni
 NNI 提供一个 web portal 可以查看训练进度、查看结果、自定义超参数和管理 HPO 实验。
 
 用户使用流程：
-![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613002323878.webp, "用户使用流程")
+![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613002323878.webp "用户使用流程")
 ![Image](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260612232740102.png)
 
 主要是使用 nnictl 来提交任务，用 WebUI 来做查看和管理。
