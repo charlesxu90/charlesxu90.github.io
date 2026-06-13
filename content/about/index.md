@@ -22,7 +22,7 @@ antibody design, peptide design, phylogenetics, cancer genomics, and synthetic
 biology. I also bring industry experience from big-data companies and AI startups,
 where I worked as a data scientist and product manager.
 
-Representative works include [AB-Gen](https://www.sciencedirect.com/science/article/pii/S167202292300092X),
+Representative works include [ProteinMCP](https://onlinelibrary.wiley.com/doi/full/10.1002/pro.70547), [AB-Gen](https://www.sciencedirect.com/science/article/pii/S167202292300092X),
 [HELM-GPT](https://academic.oup.com/bioinformatics/article/40/6/btae364/7691994),
 and a [ChatGPT-like solution for protein design](https://repository.kaust.edu.sa/items/2fed7660-6328-48d6-b00a-529bf6adb98b).
 
