@@ -1,7 +1,7 @@
 ---
 title: "GROMACS 分子动力学模拟"
 subtitle: ""
-date: 2024-04-10
+date: 2025-01-01
 draft: false
 author: "Xiaopeng Xu"
 description: "GROMACS 分子动力学模拟相关笔记。"

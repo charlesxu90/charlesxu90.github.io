@@ -1,7 +1,7 @@
 ---
 title: "DFT 有机反应建模"
 subtitle: ""
-date: 2024-11-20
+date: 2025-10-20
 draft: false
 author: "Xiaopeng Xu"
 description: "DFT 有机反应建模相关笔记。"
