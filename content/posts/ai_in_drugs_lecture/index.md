@@ -67,25 +67,29 @@ AI 在这个过程中，有多个应用点，核心是 生成和 RL优化。此�
 * 研发铁三角：人脑智能、智能计算、智能实验
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030700130.png)
+
 ### AI 技术突破有望改变药物研发
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030703309.png)
+
 ### AI 药物研发相关的突破性进展
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030706126.png)
+
 * 核心突破：AlphaFold2，有很大价值，但还不能直接应用于大分子设计。小分子设计？
 
 ## 药物应用蓝图
 
 * 分子生成-> scaffold network分析 -> 评估：物理模型模拟活性 -> 评估：AI 模型预测活性 -> RL 和 transfer learning 优化 -> 成药性过滤 -> 合成测试 -> 验证反馈 
 
-## ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030708519.png)
+![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030708519.png)
 
 ## 药物生成
 
 * 从头分子生成、官能团替换、骨架跃迁。
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030711358.png)
+
 ## 药物评估
 
 ### 物理模型
@@ -93,12 +97,15 @@ AI 在这个过程中，有多个应用点，核心是 生成和 RL优化。此�
 物理模型计算活性准确，精度高。
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030714199.png)
+
 ### 物理模型案例-预测活性、选择性
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030717494.png)
+
 ### 案例-评估 hERG
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030720211.png)
+
 ### 案例- ABFE 预测骨架活性
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030723321.png)
@@ -113,24 +120,29 @@ AI 在这个过程中，有多个应用点，核心是 生成和 RL优化。此�
 * AI 模型速度高，物理模型解释性好
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030729069.png)
+
 ## 药物合成和验证
 
 ### 智能计算和智能实验的迭代模式
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030731822.png)
+
 ### 药物合成和验证相关应用
 
 * 通过分子合成 synthesis，来指导智能实验，实现 AI 自动化验证。提升效率，支持洞见。
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030735158.png)
+
 ## 晶泰科技 AI 药物研发场景
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030737744.png)
+
 ## 相关案例
 
 * 其研发平台已经进入工业化阶段，已有多个药物研发管线正在进行。
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030741196.png)
+
 ### 案例一：first in class 药物
 
 * 合作方识别 PPI 靶点及配体结合口袋，晶泰科技计算 PPI 界面“热点”氨基酸残基，并发现 hits 和 leads。
@@ -142,6 +154,7 @@ AI 在这个过程中，有多个应用点，核心是 生成和 RL优化。此�
 * 13 个月内获得了活性、选择性和成药性较好的化合物，有很好的抑制作用。
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030746721.png)
+
 ## 参考资料
 
 ![图片](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260613030749447.png)
