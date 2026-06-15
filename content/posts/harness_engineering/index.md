@@ -7,6 +7,7 @@ author: "Xiaopeng Xu"
 description: "梳理 Harness Engineering（驾驭工程）的核心概念：Agent = Model + Harness、五层架构与三个调节维度，及其与传统需求文档、Claude Code 的关系。"
 tags: ["Harness Engineering", "Agentic AI", "Software Engineering"]
 categories: ["Technology"]
+featuredImagePreview: "https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/harness_engineering_quadrant.png?x-oss-process=image/resize,w_800/format,webp"
 lightgallery: true
 toc:
   enable: true
