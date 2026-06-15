@@ -53,13 +53,21 @@
 }
 
 // Homepage post cards: show the auto-picked thumbnail at its NATURAL aspect
-// ratio. LoveIt forces a cropped 30% banner (padding + object-fit: cover),
-// which cuts the bottom off tall figures/diagrams. See the summary.html
-// override that supplies the image.
-.home .summary .featured-image-preview {
+// ratio (full height, uncropped). LoveIt forces a cropped 30%-of-width banner
+// (`padding: 30% 0 0` + an absolutely-positioned img with object-fit: cover),
+// which slices the top/bottom off taller figures/diagrams.
+//
+// The selector MUST carry `[data-home=posts]` to match the theme's
+// specificity — the theme rules live under `.home[data-home=posts] .summary
+// .featured-image-preview` (0,4,x). A plain `.home .summary ...` selector
+// (0,3,x) loses the cascade and the override silently does nothing. With equal
+// specificity, this block wins by coming later (imported last via style.scss).
+.home[data-home=posts] .summary .featured-image-preview {
+  // Drop the fixed-aspect banner box so the image dictates its own height.
   padding: 0;
 
   img {
+    // Let the image flow at its natural height instead of filling the box.
     position: static;
     width: 100%;
     height: auto;
