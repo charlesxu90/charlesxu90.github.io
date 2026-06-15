@@ -20,9 +20,9 @@ toc:
 
 ## 引言：一匹需要缰绳的马
 
-2026 年初，HashiCorp 联合创始人 Mitchell Hashimoto 在记录自己 AI 使用历程的博客中，提出了一个简洁而深刻的工程原则：每当智能体（Agent）犯错时，工程师的职责不是"重试"，而是"构建一个让 Agent 永远不再犯同类错误的解决方案" [1]。这个原则，被后来的社区命名为 **Harness Engineering（驭缰工程）**。
+2026 年初，HashiCorp 联合创始人 Mitchell Hashimoto 在记录自己 AI 使用历程的博客中，提出了一个简洁而深刻的工程原则：每当智能体（Agent）犯错时，工程师的职责不是"重试"，而是"构建一个让 Agent 永远不再犯同类错误的解决方案" [\[1\]](#ref-1)。这个原则，被后来的社区命名为 **Harness Engineering（驭缰工程）**。
 
-随后，OpenAI 工程师 Ryan Lopopolo 发表了一篇里程碑式的文章，记录了他的团队如何用 5 个月时间、3 名工程师、0 行手写代码，通过 Codex 构建了一个拥有约 100 万行代码的内部产品 [2]。Martin Fowler 则从软件工程方法论的角度，对这一范式进行了系统性阐述 [3]。
+随后，OpenAI 工程师 Ryan Lopopolo 发表了一篇里程碑式的文章，记录了他的团队如何用 5 个月时间、3 名工程师、0 行手写代码，通过 Codex 构建了一个拥有约 100 万行代码的内部产品 [\[2\]](#ref-2)。Martin Fowler 则从软件工程方法论的角度，对这一范式进行了系统性阐述 [\[3\]](#ref-3)。
 
 "Harness" 的字面意思是马具（缰绳、鞍具）。这个比喻极为贴切：大语言模型（LLM）就像一匹蛮力十足但方向感不稳的马，Harness 的作用是把它的能量引导到正确的方向上。**Harness Engineering 并不优化模型本身，而是优化模型运行的环境。**
 
@@ -72,7 +72,7 @@ Harness Engineering 的核心公式极为简洁：
 
 ### 1.4 Harness 的三个调节维度
 
-Martin Fowler 进一步将 Harness 的调节目标分为三个维度 [3]：
+Martin Fowler 进一步将 Harness 的调节目标分为三个维度 [\[3\]](#ref-3)：
 
 **可维护性 Harness（Maintainability Harness）**：调节代码内部质量，包括重复代码检测、圈复杂度、测试覆盖率、架构漂移、风格违规等。这是目前工具链最成熟的维度，计算型传感器（Linter、类型检查器）可以可靠地覆盖大部分问题。
 
@@ -100,7 +100,7 @@ Harness Engineering 并非抛弃传统文档的内容，而是将其**重新编�
 
 **PRD 的转化**：产品愿景被保留在 SPEC.md 的高层描述中；功能列表和用户故事被转化为分阶段任务文件（Tasks），每个任务的工作量控制在 5–15 分钟，具有可测试的检查点；验收标准被转化为可执行的 BDD 场景或结构测试；非目标（Non-goals）被转化为显式的约束声明（如 `DO NOT CHANGE` 保护模式）。
 
-**TRD 的转化**：技术设计文档被一分为二。架构规范部分被机械化为自定义 Linter 规则和结构测试——OpenAI 团队将依赖方向（Types → Config → Repo → Service → Runtime → UI）编码为自定义 Linter，违规时错误消息内嵌修复指令，让 Agent 能自我纠正 [2]。架构描述部分被转化为版本控制的活体文档（`architecture.md`），通过 CI 钩子检测文档与代码的漂移，解决了传统 TRD 最大的痛点：文档腐烂（Documentation Rot）。
+**TRD 的转化**：技术设计文档被一分为二。架构规范部分被机械化为自定义 Linter 规则和结构测试——OpenAI 团队将依赖方向（Types → Config → Repo → Service → Runtime → UI）编码为自定义 Linter，违规时错误消息内嵌修复指令，让 Agent 能自我纠正 [\[2\]](#ref-2)。架构描述部分被转化为版本控制的活体文档（`architecture.md`），通过 CI 钩子检测文档与代码的漂移，解决了传统 TRD 最大的痛点：文档腐烂（Documentation Rot）。
 
 **ADR 的地位提升**：在所有传统文档中，架构决策记录（ADR）是唯一被完整保留的形式。原因在于 ADR 记录的是"为什么"——决策背后的约束、权衡和理由——这是 Agent 永远无法从代码中自动推断的人类判断。ADR 被版本化存入仓库，成为 Agent 的"冷记忆知识库"的重要组成部分。
 
@@ -125,7 +125,7 @@ Harness Engineering 并非抛弃传统文档的内容，而是将其**重新编�
 
 ### 3.1 Claude Code 是一个 Harness
 
-2026 年 3 月，Claude Code 2.1.88 版本因 npm source map 打包错误意外泄露了超过 50 万行 TypeScript 源代码。研究人员随即进行了逆向工程分析，得出了一个震撼性结论 [4]：
+2026 年 3 月，Claude Code 2.1.88 版本因 npm source map 打包错误意外泄露了超过 50 万行 TypeScript 源代码。研究人员随即进行了逆向工程分析，得出了一个震撼性结论 [\[4\]](#ref-4)：
 
 > **Claude Code 代码库中，约 98.4% 是操作基础设施（Harness），只有约 1.6% 是 AI 决策逻辑。**
 
@@ -135,7 +135,7 @@ Harness Engineering 并非抛弃传统文档的内容，而是将其**重新编�
 
 ### 3.2 双层 Harness 结构
 
-Martin Fowler 提出了一个关键区分 [3]：Claude Code 这类工具形成了一个**双层 Harness 结构**，两层之间的边界，正是 Harness Engineering 实践的分水岭。
+Martin Fowler 提出了一个关键区分 [\[3\]](#ref-3)：Claude Code 这类工具形成了一个**双层 Harness 结构**，两层之间的边界，正是 Harness Engineering 实践的分水岭。
 
 **构建者 Harness（Builder Harness）**：由工具提供商（如 Anthropic）构建，即 Claude Code 本身。它包含 Agent 循环、工具分发、权限系统、上下文压缩等。这一层对用户而言是黑盒，但可以通过配置接口进行调整。
 
@@ -156,7 +156,7 @@ Martin Fowler 提出了一个关键区分 [3]：Claude Code 这类工具形成�
       反馈回路、技能文件、执行计划……
 ```
 
-这个结构解释了一个重要的数据点：Addy Osmani 的分析发现，同一个 Claude Opus 4.6 模型，在 Claude Code 内部运行的得分，远低于在定制用户 Harness 中运行的得分 [1]。LangChain 团队仅通过改进 Harness（不改动模型权重），在 Terminal Bench 2.0 上将同一模型从第 30 名提升至第 5 名。
+这个结构解释了一个重要的数据点：Addy Osmani 的分析发现，同一个 Claude Opus 4.6 模型，在 Claude Code 内部运行的得分，远低于在定制用户 Harness 中运行的得分 [\[1\]](#ref-1)。LangChain 团队仅通过改进 Harness（不改动模型权重），在 Terminal Bench 2.0 上将同一模型从第 30 名提升至第 5 名。
 
 **模型提供智能，Harness 提供可靠性。** 当多个团队使用同一个底层模型时，用户 Harness 的质量成为唯一的差异化变量。
 
@@ -195,7 +195,7 @@ Martin Fowler 提出了一个关键区分 [3]：Claude Code 这类工具形成�
 
 **设计反馈信号的语义**：一条说"违规检测"的 Linter 错误需要人类解读；一条说"请使用 `logger.info({event: 'name', ...data})` 替代 `console.log`"的错误消息则能让 Agent 自我纠正。设计这种"对 Agent 有意义"的错误消息，需要理解 Agent 的推理模式，这是一种元认知能力。
 
-**制定验收标准（Acceptance Criteria）**：Martin Fowler 明确指出，如果人类没有清晰指定"什么是正确的"，任何传感器都无法检测正确性 [3]。验收标准是 Harness 的"根"，是整个约束系统的起点，必须由人类提供。
+**制定验收标准（Acceptance Criteria）**：Martin Fowler 明确指出，如果人类没有清晰指定"什么是正确的"，任何传感器都无法检测正确性 [\[3\]](#ref-3)。验收标准是 Harness 的"根"，是整个约束系统的起点，必须由人类提供。
 
 **架构决策（ADR）的制定**：涉及技术债、团队能力、业务约束的多维权衡，AI 只能提供选项矩阵，无法做出最终判断。
 
@@ -223,7 +223,7 @@ Martin Fowler 提出了一个关键区分 [3]：Claude Code 这类工具形成�
 
 **误解二："Harness Engineering 是一次性工作"**
 
-Harness 是一个**持续演化的系统**，每次 Agent 犯错都应该触发 Harness 的更新。Addy Osmani 将这个机制称为"棘轮（Ratchet）"——只加不减，直到某个约束因模型能力提升而变得冗余 [1]。好的 `AGENTS.md` 中的每一行，都应该可以追溯到一个具体的失败案例。
+Harness 是一个**持续演化的系统**，每次 Agent 犯错都应该触发 Harness 的更新。Addy Osmani 将这个机制称为"棘轮（Ratchet）"——只加不减，直到某个约束因模型能力提升而变得冗余 [\[1\]](#ref-1)。好的 `AGENTS.md` 中的每一行，都应该可以追溯到一个具体的失败案例。
 
 **误解三："更大的上下文窗口会让 Harness Engineering 变得不必要"**
 
@@ -233,7 +233,7 @@ Harness 是一个**持续演化的系统**，每次 Agent 犯错都应该触发 
 
 ## 六、OpenAI 百万行代码实验：Harness Engineering 的最佳实践案例
 
-OpenAI 团队的实验是迄今为止 Harness Engineering 最具说服力的实证案例 [2]。5 个月、3 名工程师、约 100 万行代码、约 1,500 个 PR，人均日均 3.5 个 PR，效率约为传统方式的 10 倍。他们总结的核心 Harness 原则包括：
+OpenAI 团队的实验是迄今为止 Harness Engineering 最具说服力的实证案例 [\[2\]](#ref-2)。5 个月、3 名工程师、约 100 万行代码、约 1,500 个 PR，人均日均 3.5 个 PR，效率约为传统方式的 10 倍。他们总结的核心 Harness 原则包括：
 
 **设计环境，而非编写代码**：当 Agent 卡住时，诊断"缺少什么能力"并让 Agent 自己构建该能力。人类工程师的工作是识别能力缺口，而非填补它。
 
@@ -266,14 +266,14 @@ Harness Engineering 代表着软件工程师核心产出的一次根本性转变
 
 ## 参考文献
 
-[1] Addy Osmani. (2026, April 19). *Agent Harness Engineering*. addyosmani.com. https://addyosmani.com/blog/agent-harness-engineering/
+<a id="ref-1"></a>[1] Addy Osmani. (2026, April 19). *Agent Harness Engineering*. addyosmani.com. <https://addyosmani.com/blog/agent-harness-engineering/>
 
-[2] Ryan Lopopolo / OpenAI. (2026, February 11). *Harness engineering: leveraging Codex in an agent-first world*. openai.com. https://openai.com/index/harness-engineering/
+<a id="ref-2"></a>[2] Ryan Lopopolo / OpenAI. (2026, February 11). *Harness engineering: leveraging Codex in an agent-first world*. openai.com. <https://openai.com/index/harness-engineering/>
 
-[3] Martin Fowler. (2026, April 2). *Harness engineering for coding agent users*. martinfowler.com. https://martinfowler.com/articles/harness-engineering.html
+<a id="ref-3"></a>[3] Martin Fowler. (2026, April 2). *Harness engineering for coding agent users*. martinfowler.com. <https://martinfowler.com/articles/harness-engineering.html>
 
-[4] Cobus Greyling. (2026, April 20). *98% of Claude Code Is Not AI*. cobusgreyling.substack.com. https://cobusgreyling.substack.com/p/98-of-claude-code-is-not-ai
+<a id="ref-4"></a>[4] Cobus Greyling. (2026, April 20). *98% of Claude Code Is Not AI*. cobusgreyling.substack.com. <https://cobusgreyling.substack.com/p/98-of-claude-code-is-not-ai>
 
-[5] Augment Code. (2026, April 17). *Harness Engineering for AI Coding Agents: Constraints That Ship*. augmentcode.com. https://www.augmentcode.com/guides/harness-engineering-ai-coding-agents
+<a id="ref-5"></a>[5] Augment Code. (2026, April 17). *Harness Engineering for AI Coding Agents: Constraints That Ship*. augmentcode.com. <https://www.augmentcode.com/guides/harness-engineering-ai-coding-agents>
 
-[6] Wavespeed AI. (2026, April 6). *Claude Code Agent Harness: Architecture Breakdown*. wavespeed.ai. https://wavespeed.ai/blog/posts/claude-code-agent-harness-architecture/
+<a id="ref-6"></a>[6] Wavespeed AI. (2026, April 6). *Claude Code Agent Harness: Architecture Breakdown*. wavespeed.ai. <https://wavespeed.ai/blog/posts/claude-code-agent-harness-architecture/>
