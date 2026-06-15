@@ -1,10 +1,10 @@
 ---
-title: "驭缰工程（Harness Engineering）：AI 时代软件工程的新范式"
+title: "驾驭工程（Harness Engineering）：AI 时代软件工程的新范式"
 subtitle: ""
 date: 2026-06-15
 draft: false
 author: "Xiaopeng Xu"
-description: "梳理 Harness Engineering（驭缰工程）的核心概念：Agent = Model + Harness、五层架构与三个调节维度，及其与传统需求文档、Claude Code 的关系。"
+description: "梳理 Harness Engineering（驾驭工程）的核心概念：Agent = Model + Harness、五层架构与三个调节维度，及其与传统需求文档、Claude Code 的关系。"
 tags: ["Harness Engineering", "Agentic AI", "Software Engineering"]
 categories: ["Technology"]
 lightgallery: true
@@ -20,7 +20,7 @@ toc:
 
 ## 引言：一匹需要缰绳的马
 
-2026 年初，HashiCorp 联合创始人 Mitchell Hashimoto 在记录自己 AI 使用历程的博客中，提出了一个简洁而深刻的工程原则：每当智能体（Agent）犯错时，工程师的职责不是"重试"，而是"构建一个让 Agent 永远不再犯同类错误的解决方案" [\[1\]](#ref-1)。这个原则，被后来的社区命名为 **Harness Engineering（驭缰工程）**。
+2026 年初，HashiCorp 联合创始人 Mitchell Hashimoto 在记录自己 AI 使用历程的博客中，提出了一个简洁而深刻的工程原则：每当智能体（Agent）犯错时，工程师的职责不是"重试"，而是"构建一个让 Agent 永远不再犯同类错误的解决方案" [\[1\]](#ref-1)。这个原则，被后来的社区命名为 **Harness Engineering（驾驭工程）**。
 
 随后，OpenAI 工程师 Ryan Lopopolo 发表了一篇里程碑式的文章，记录了他的团队如何用 5 个月时间、3 名工程师、0 行手写代码，通过 Codex 构建了一个拥有约 100 万行代码的内部产品 [\[2\]](#ref-2)。Martin Fowler 则从软件工程方法论的角度，对这一范式进行了系统性阐述 [\[3\]](#ref-3)。
 
@@ -171,6 +171,15 @@ Martin Fowler 提出了一个关键区分 [\[3\]](#ref-3)：Claude Code 这类�
 **维度一**：该工作是否属于 Harness Engineering？（是否在"设计 Agent 运行的约束环境"这个范畴内？）
 
 **维度二**：AI 当前能否替代该工作？（可替代 / 可辅助 / 不可替代）
+
+将这两个维度交叉，便得到一张四象限图，清晰地划分出软件工程实践的版图：
+
+![Harness Engineering 四象限：是否属于 HE 范畴 × AI 是否可替代](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/harness_engineering_quadrant.png?x-oss-process=image/resize,w_1600/format,webp)
+
+- **左上（属于 HE × AI 可替代）**：Harness 的执行层——编写 Linter、Hooks、`AGENTS.md` 等形式明确、可验证的制品。
+- **右上（属于 HE × AI 不可替代）**：Harness 的判断层，也是工程师的**核心价值**——制定验收标准（AC）、架构决策（ADR）、判断介入时机等价值判断。
+- **左下（非 HE × AI 可替代）**：Agent 执行的任务——业务代码、单元测试、重构等。
+- **右下（非 HE × AI 不可替代）**：人类判断的核心领域——产品战略、系统级架构权衡、安全威胁建模等。
 
 ### 4.2 属于 Harness Engineering，且 AI 可以大量替代
 
