@@ -1,5 +1,5 @@
 ---
-title: "循环工程（Loop Engineering）：炒作、本质与 AI 智能体架构的下一次演进"
+title: "循环工程（Loop Engineering）：炒作还是 AI 智能体架构的下一次演进"
 subtitle: ""
 date: 2026-08-10
 draft: false
