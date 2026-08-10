@@ -19,6 +19,11 @@ enableRobotsTXT = true
 enableGitInfo = false
 enableEmoji = true
 
+# Publish posts dated "today" even if the CI build runs (in UTC) before the
+# post's local date — otherwise a future-dated post is silently dropped and the
+# deploy still reports success. See CLAUDE.md.
+buildFuture = true
+
 # tolerate optional remote/data fetch errors during build
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
