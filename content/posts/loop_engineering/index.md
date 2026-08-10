@@ -7,6 +7,7 @@ author: "Xiaopeng Xu"
 description: "梳理 Loop Engineering（循环工程）的核心概念：迭代反馈周期、四层循环堆栈与 PDCA 的控制论渊源，及其与 Harness Engineering 的分工、隐藏代价和向图网络的演进。"
 tags: ["Loop Engineering", "Harness Engineering", "Agentic AI", "Software Engineering"]
 categories: ["Technology"]
+featuredImagePreview: "https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260810094602312.png?x-oss-process=image/resize,w_800/format,webp"
 lightgallery: true
 toc:
   enable: true
@@ -33,6 +34,8 @@ Anthropic 的 Claude Code 创建者 Boris Cherny 公开宣称自己的工作已�
 ---
 
 ## 一、什么是循环工程？
+
+![循环工程总览：计划 → 执行 → 观察 → 调整的迭代反馈周期](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20260810094602312.png?x-oss-process=image/resize,w_1600/format,webp)
 
 ### 1.1 从单次生成到迭代反馈周期
 
