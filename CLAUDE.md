@@ -51,7 +51,7 @@ Front matter shape used across posts (see any `content/posts/*/index.md`):
 ```yaml
 ---
 title: "..."
-date: YYYY-MM-DD        # controls sort order (newest first); future dates may publish since buildFuture is on
+date: YYYY-MM-DD        # controls sort order (newest first); future dates publish because `buildFuture = true` is set in hugo.toml (needed: CI builds in UTC and can run before a post's local date, which would otherwise silently drop it)
 draft: false
 description: "..."
 tags: [...]
