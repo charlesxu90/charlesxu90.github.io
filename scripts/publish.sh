@@ -84,7 +84,7 @@ if [[ "$(unpushed_count)" == "0" ]]; then
   echo "✓ Nothing to push."
   exit 0
 fi
-echo "▶ Pushing to origin/$BRANCH…"
+echo "▶ Pushing to origin/${BRANCH}…"
 git push -q origin "$BRANCH"
 SHA="$(git rev-parse HEAD)"
 echo "✓ Pushed $(git rev-parse --short HEAD)"
