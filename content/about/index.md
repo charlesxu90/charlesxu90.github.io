@@ -56,7 +56,7 @@ and a [ChatGPT-like solution for protein design](https://repository.kaust.edu.sa
 | *Nature Computer Science* | 1 |
 | *Nature Communications* | 1 |
 | *Genomics Proteomics and Bioinformatics* | 1 |
-| *Bioinformatics* | 4 |
+| *Bioinformatics* | 5 |
 | *Pattern Recognition* | 3 |
 | *ACS Synthetic Biology* | 2 |
 | *IEEE Internet of Things Journal* | 1 |
