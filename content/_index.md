@@ -12,7 +12,7 @@ title: "Xiaopeng Xu"
 -->
 
 - **Sep 23, 2026**, my Co-PI Shaheen III Grand Challenge Project proposal on “Multi-Scale AI-MD-QM/MM Platform for Next-Generation Biologics Design” was appproved on Shaheen III GPU! Cheers!
-- **Aug 2, 2024**, my Co-PI Translational Research Grants (TRG2026) on AI-based protein design solutions for industrial biologics and medical applications was funded by KAUST! ~1 million USD fund to support our research! Cheers!
+- **Aug 2, 2026**, my Co-PI Translational Research Grants (TRG2026) on AI-based protein design solutions for industrial biologics and medical applications was funded by KAUST! ~1 million USD fund to support our research! Cheers!
 - **Jun 23, 2026**, started as a **Research Scientist** at **[SFB@KAUST](https://sfb.kaust.edu.sa/)**.
 - **Jun 8, 2026**, **[Mater-trends](https://xu-xp.com/Mater-trends/)** — to track researches on material science — up and alive.
 - **Jun 3, 2026**, **[AI-trends](https://xu-xp.com/AI-trends/)** — to track research trends on artificial intelligence — and **[Bio-trends](https://xu-xp.com/Bio-trends/)** — to track researches on bioscience — up and alive.
