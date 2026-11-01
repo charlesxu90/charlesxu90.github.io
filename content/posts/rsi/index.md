@@ -7,6 +7,7 @@ author: "Xiaopeng Xu"
 description: "从 Gödel Machine 到自进化 Agent，梳理 RSI（递归自我改进）的三个层次、代表性工作（DGM、HyperAgents、AIDE²、AlphaEvolve、AFlow）、五个剥离炒作的评估问题，以及它与 Harness、Loop、Graph Engineering 的关系。"
 tags: ["Recursive Self-Improvement", "Self-Evolving Agents", "Harness Engineering", "Loop Engineering", "Graph Engineering", "Agentic AI", "AI for Science"]
 categories: ["Technology"]
+featuredImagePreview: "https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20261101222217737.png?x-oss-process=image/resize,w_1600/format,webp"
 lightgallery: true
 toc:
   enable: true
@@ -27,6 +28,8 @@ toc:
 **本文的核心判断是：RSI 的局部进展是真实的，但从"系统变得更好"到"系统越来越擅长改进自己"，中间仍有很长的距离。**
 
 <!--more-->
+
+![RSI（递归自我改进）信息图](https://xux-zotero-img.oss-cn-beijing.aliyuncs.com/img/20261101222217737.png)
 
 ---
 
