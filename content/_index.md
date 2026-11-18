@@ -28,5 +28,5 @@ title: "Xiaopeng Xu"
 - **May 5, 2024**, defended my **Ph.D Dissertation** — ["A ChatGPT-like solution for protein design: combining generative and predictive AI to design functional proteins"](https://repository.kaust.edu.sa/handle/10754/698624)! Cheers!
 - **Jun 28, 2023**, **[SGPT-RL](https://f1000research.com/articles/12-757)** — for chemical drug design with GPT and RL — published in **F1000Research**!
 - **Feb 20, 2023**, **[AB-Gen](https://www.sciencedirect.com/science/article/pii/S167202292300092X)** — for antibody with GPT and RL — published in **Genomics, Proteomics & Bioinformatics**!
-- **Nov 11, 2021**, [an AI guided review of 17 000 studies in COVID-19 computational research](https://academic.oup.com/bioinformatics/article/40/6/btae364/7691994) published in **Briefings in Bioinformatics**
+- **Nov 11, 2021**, [an AI guided review of 17 000 studies in COVID-19 computational research](https://academic.oup.com/bib/article/23/1/bbab456/6425232) published in **Briefings in Bioinformatics**
 {{< /recent-news >}}
