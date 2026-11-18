@@ -11,15 +11,15 @@ For the most up-to-date list, see my
 
 ## Journal Articles
 
-- Reinforcement learning with evolutionary priors unlocks multi-site enzyme optimization from sparse experimental feedback.  
-   **Xiaopeng Xu**, Hao Ye, Ziqi Gao, Ruochi Zhang, Xinhai Zhou, Guiting Zhang, Tao Guo, Wenjia He, Chenjie Feng, Bin Xiao, et al.  
+- [Reinforcement learning with evolutionary priors unlocks multi-site enzyme optimization from sparse experimental feedback (AlphaVariant).](https://www.biorxiv.org/content/10.64898/2026.10.19.760152v1.abstract)  
+   **Xiaopeng Xu**, Hao Ye, Ziqi Gao, Ruochi Zhang, Xinhai Zhou, Guiting Zhang, Tao Guo, Wenjia He, Chenjie Feng, Bin Xiao, Feifei Hu, Qiangcheng Zeng, Aixi Bai, Xiao Zhang, Jie Wang, Xin Gao.  
    *bioRxiv* (2026): 2026-10.
 
-- ConTP reshapes transporter functional space to resolve substrate specificity beyond evolutionary proximity.  
+- [ConTP reshapes transporter functional space to resolve substrate specificity beyond evolutionary proximity.](https://www.nature.com/articles/s42003-026-11044-8)  
    Chenjie Feng, Wenjia He, Junbo Yin, **Xiaopeng Xu**, Min Zhou, Yunchuan Wang, Mark Tester, Xin Gao.  
    *Communications Biology* (2026).
 
-- ROMET-RNA benchmarks and selects RNA 3D structures using multiple predictors and alignment strategies.  
+- [ROMET-RNA benchmarks and selects RNA 3D structures using multiple predictors and alignment strategies.](https://doi.org/10.1186/s13059-026-04308-3)  
    Chenjie Feng, Tian Zhang, Wenjia He, Zhe Liu, **Xiaopeng Xu**, Chao Zha, Xin Gao, Renmin Han.  
    *Genome Biology* (2026).
 
