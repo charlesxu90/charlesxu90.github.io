@@ -5,6 +5,14 @@ draft: false
 description: "Awards, honours, scholarships, and grants received by Xiaopeng Xu."
 ---
 
+## Research Funding & Computing Allocations
+
+- **KAUST Translational Research Grant (TRG2026)**, 2026 — Co-I. *AI-based protein design solutions for industrial biologics and medical applications* (~USD 1 million) — KAUST
+- **Shaheen III Grand Challenge Project (GPU)**, 2026 — Co-I. *Multi-Scale AI-MD-QM/MM Platform for Next-Generation Biologics Design* — KAUST Supercomputing Core Lab
+- **Shaheen III Project (CPU)**, 2024 — Co-I. *Molecular dynamics simulations-enhanced AI for enzyme design and optimization* — KAUST Supercomputing Core Lab
+
+## Awards & Scholarships
+
 - **Full scholarship for PhD study**, 2020 — KAUST
 - **Full scholarship for master study**, 2013 — KAUST
 - **Innovative Person** (awarded to 2 students among 300 graduates), 2013 — School of Life Science and Technology, HUST
