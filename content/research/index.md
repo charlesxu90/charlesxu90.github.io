@@ -9,7 +9,7 @@ description: "Research interests of Xiaopeng Xu — agentic AI, protein design, 
 
 To develop agentic AI systems for scientific research and industrial applications.
 
-*Representative works:* [ProteinMCP](https://github.com/charlesxu90/ProteinMCP), and CycPepMCP.
+*Representative works:* [ProteinMCP](https://github.com/charlesxu90/ProteinMCP), and [CycPepMCP](https://github.com/charlesxu90/CycPepMCP) (to be published soon).
 
 ![ProteinMCP](https://xu-xp.com/ProteinMCP/assets/images/ProteinMCP.webp "Overview of ProteinMCP.")
 
@@ -19,7 +19,7 @@ To develop new methods and tools for protein design, including the design of
 enzymes and transporters.
 
 *Representative works:* [AB-Gen](https://www.sciencedirect.com/science/article/pii/S167202292300092X),
-AlphaVariant, [DGC-libgen](https://github.com/charlesxu90/dgc-libgen),
+[AlphaVariant](https://www.biorxiv.org/content/10.64898/2026.10.19.760152v1.abstract), [DGC-libgen](https://github.com/charlesxu90/dgc-libgen),
 [Fast-Boltz2](https://github.com/charlesxu90/fast_boltz2/),
 [AggNet](https://github.com/Hill-Wenka/AggNet).
 
