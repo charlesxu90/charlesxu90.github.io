@@ -11,6 +11,18 @@ For the most up-to-date list, see my
 
 ## Journal Articles
 
+- Reinforcement learning with evolutionary priors unlocks multi-site enzyme optimization from sparse experimental feedback.  
+   **Xiaopeng Xu**, Hao Ye, Ziqi Gao, Ruochi Zhang, Xinhai Zhou, Guiting Zhang, Tao Guo, Wenjia He, Chenjie Feng, Bin Xiao, et al.  
+   *bioRxiv* (2026): 2026-10.
+
+- ConTP reshapes transporter functional space to resolve substrate specificity beyond evolutionary proximity.  
+   Chenjie Feng, Wenjia He, Junbo Yin, **Xiaopeng Xu**, Min Zhou, Yunchuan Wang, Mark Tester, Xin Gao.  
+   *Communications Biology* (2026).
+
+- ROMET-RNA benchmarks and selects RNA 3D structures using multiple predictors and alignment strategies.  
+   Chenjie Feng, Tian Zhang, Wenjia He, Zhe Liu, **Xiaopeng Xu**, Chao Zha, Xin Gao, Renmin Han.  
+   *Genome Biology* (2026).
+
 - [ProteinMCP: An agentic AI framework for autonomous protein engineering.](https://onlinelibrary.wiley.com/doi/full/10.1002/pro.70547)  
    **Xiaopeng Xu**, Chenjie Feng, Chao Zha, Wenjia He, Maolin He, Bin Xiao, Xin Gao.  
    *Protein Science* 35.4 (2026): e70547.

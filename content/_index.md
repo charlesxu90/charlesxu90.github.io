@@ -11,6 +11,7 @@ title: "Xiaopeng Xu"
   Set height="none" on the shortcode above to disable scrolling.
 -->
 
+- **Oct 2026**, my first-author preprint — **Reinforcement learning with evolutionary priors unlocks multi-site enzyme optimization from sparse experimental feedback** — released on **bioRxiv**!
 - **Sep 23, 2026**, my Co-I Shaheen III Grand Challenge Project proposal on “Multi-Scale AI-MD-QM/MM Platform for Next-Generation Biologics Design” was appproved on Shaheen III GPU! Cheers!
 - **Aug 2, 2026**, my Co-I Translational Research Grants (TRG2026) on AI-based protein design solutions for industrial biologics and medical applications was funded by KAUST! ~1 million USD fund to support our research! Cheers!
 - **Jun 23, 2026**, started as a **Research Scientist** at **[SFB@KAUST](https://sfb.kaust.edu.sa/)**.
