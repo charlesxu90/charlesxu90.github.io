@@ -12,7 +12,7 @@ title: "Xiaopeng Xu"
 -->
 
 - **Oct 21, 2026**, my first-author preprint **[AlphaVariant](https://www.biorxiv.org/content/10.64898/2026.10.19.760152v1.abstract)** — reinforcement learning with evolutionary priors for multi-site enzyme optimization from sparse experimental feedback — released on **bioRxiv**!
-- **Sep 23, 2026**, my Co-I Shaheen III Grand Challenge Project proposal on “Multi-Scale AI-MD-QM/MM Platform for Next-Generation Biologics Design” was appproved on Shaheen III GPU! Cheers!
+- **Sep 23, 2026**, my Co-I Shaheen III Grand Challenge Project proposal on “Multi-Scale AI-MD-QM/MM Platform for Next-Generation Biologics Design” was approved on Shaheen III GPU! Cheers!
 - **Aug 2, 2026**, my Co-I Translational Research Grants (TRG2026) on AI-based protein design solutions for industrial biologics and medical applications was funded by KAUST! ~1 million USD fund to support our research! Cheers!
 - **Jun 23, 2026**, started as a **Research Scientist** at **[SFB@KAUST](https://sfb.kaust.edu.sa/)**.
 - **Jun 8, 2026**, **[Mater-trends](https://xu-xp.com/Mater-trends/)** — to track researches on material science — up and alive.
@@ -24,7 +24,7 @@ title: "Xiaopeng Xu"
 - **Jul 18, 2024**, **[SANTO](https://www.nature.com/articles/s41467-024-50308-x)** — a method for alignment and stitching in spatial omics — published in **Nature Communications**.
 - **Jun 12, 2024**, **[HELM-GPT](https://academic.oup.com/bioinformatics/article/40/6/btae364/7691994)** — de novo macrocyclic peptide design — published in **Bioinformatics**!
 - **Jun 23, 2024**, started as a **Postdoctorate Research Fellow** at **[SFB@KAUST](https://sfb.kaust.edu.sa/)**.
-- **May 13, 2024**, my Co-I Shaheen III  proposal on “Molecular dynamics simulations-enhanced AI for enzyme design and optimization” was appproved on Shaheen III CPU! Cheers!
+- **May 13, 2024**, my Co-I Shaheen III  proposal on “Molecular dynamics simulations-enhanced AI for enzyme design and optimization” was approved on Shaheen III CPU! Cheers!
 - **May 5, 2024**, defended my **Ph.D Dissertation** — ["A ChatGPT-like solution for protein design: combining generative and predictive AI to design functional proteins"](https://repository.kaust.edu.sa/handle/10754/698624)! Cheers!
 - **Jun 28, 2023**, **[SGPT-RL](https://f1000research.com/articles/12-757)** — for chemical drug design with GPT and RL — published in **F1000Research**!
 - **Feb 20, 2023**, **[AB-Gen](https://www.sciencedirect.com/science/article/pii/S167202292300092X)** — for antibody with GPT and RL — published in **Genomics, Proteomics & Bioinformatics**!
